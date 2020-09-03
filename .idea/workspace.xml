@@ -20,7 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e210fac3-3547-467e-80c6-9e6e7289a73d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/diseniosPag/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diseniosPag/MenuLateralFormato.html" beforeDir="false" afterPath="$PROJECT_DIR$/diseniosPag/MenuLateralFormato.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diseniosPag/estilos.css" beforeDir="false" afterPath="$PROJECT_DIR$/diseniosPag/estilos.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diseniosPag/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/diseniosPag/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +42,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -49,7 +53,10 @@
       <option name="presentableId" value="Default" />
       <updated>1598120891456</updated>
       <workItem from="1598120893103" duration="557000" />
-      <workItem from="1598232209254" duration="96000" />
+      <workItem from="1598232209254" duration="371000" />
+      <workItem from="1598389878545" duration="150000" />
+      <workItem from="1598648768787" duration="2585000" />
+      <workItem from="1598651507407" duration="11000" />
     </task>
     <servers />
   </component>
@@ -66,6 +73,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="499" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1598121448950">

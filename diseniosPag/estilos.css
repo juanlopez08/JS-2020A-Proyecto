@@ -10,6 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-grow: 1;
+
 }
 
 .father{
@@ -268,7 +269,7 @@ input[type=text]:placeholder {
 }
 
 
-@media all and (max-width: 660px){/*condiciones de 0px a 400px*/
+@media all and (max-width: 660px){/*condiciones de 0px a 660px*/
     .container{
         flex-direction: column; /*mostrar publicidad en forma de coumna, uno bajo el otro*/
     }
