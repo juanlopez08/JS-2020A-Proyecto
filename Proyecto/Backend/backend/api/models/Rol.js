@@ -18,6 +18,13 @@ module.exports = {
 
     },
 
+    // RELACIONES
+    // Rol -> UsuarioTieneRol
+    usuarioTieneRoles: {  // Uno a muchos (nombre en plurar)
+      collection : 'UsuarioTieneRol',   // Modelo a relacionarse
+      via: 'rol'  // Nombre atributo FK en el modelo relacionado
+    }
+
   },
 
 };

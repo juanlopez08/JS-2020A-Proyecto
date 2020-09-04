@@ -17,7 +17,7 @@ module.exports = {
       required: true, // Por defecto es false
       columnName: 'cedula_usuario',
       unique: true, // Por defecto es false
-      minLength: 10,
+      minLength: 9,
       maxLength: 25
     },
     nombre_usuario:{
@@ -39,6 +39,14 @@ module.exports = {
       type: 'string',
       minLength: 3,
       required: true,
+    },
+
+
+    // RELACIONES
+    // Usuario -> UsuarioTieneRol
+    usuarioTieneRoles: {  // Uno a muchos (nombre en plurar)
+      collection : 'UsuarioTieneRol',   // Modelo a relacionarse
+      via: 'usuario'  // Nombre atributo FK en el modelo relacionado
     }
 
   },
