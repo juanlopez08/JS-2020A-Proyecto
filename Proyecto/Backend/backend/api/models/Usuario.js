@@ -47,6 +47,12 @@ module.exports = {
     usuarioTieneRoles: {  // Uno a muchos (nombre en plurar)
       collection : 'UsuarioTieneRol',   // Modelo a relacionarse
       via: 'usuario'  // Nombre atributo FK en el modelo relacionado
+    },
+
+    // Usuario -> UsuarioGuardaCupon
+    usuarioGuardaCupones: {  // Uno a muchos (nombre en plurar)
+      collection : 'UsuarioGuardaCupon',   // Modelo a relacionarse
+      via: 'usuario'  // Nombre atributo FK en el modelo relacionado
     }
 
   },
