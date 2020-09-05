@@ -41,6 +41,12 @@ module.exports = {
       required: true,
     },
 
+    birthdate_usuario:{
+      type: 'string',
+      minLength: 9,
+      required: true,
+    },
+
 
     // RELACIONES
     // Usuario -> UsuarioTieneRol
