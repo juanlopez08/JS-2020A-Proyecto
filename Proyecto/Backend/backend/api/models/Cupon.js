@@ -38,11 +38,25 @@ module.exports = {
       required: true,
     },
 
+    // RELACIONES
     // Cupon -> UsuarioGuardaCupon
     usuarioGuardaCupones: {  // Uno a muchos (nombre en plurar)
       collection : 'UsuarioGuardaCupon',   // Modelo a relacionarse
       via: 'cupon'  // Nombre atributo FK en el modelo relacionado
-    }
+    },
+
+    // Cupon -> ArticuloEnCupon
+    articulosEnCupones: {  // cupon tiene muchos articulos
+      collection : 'ArticuloEnCupon',   // Modelo a relacionarse
+      via: 'cupon'  // Nombre atributo FK en el modelo relacionado
+    },
+
+    // Cupon <- Establecimiento - Muchos a Uno
+    establecimiento: { // Nombre FK
+      model: 'Establecimiento', // Modelo con el cual relacionamos
+      required: true, // Requerida 1 - N
+      //false // Opcional  0 - N (por defecto)
+    },
 
   },
 

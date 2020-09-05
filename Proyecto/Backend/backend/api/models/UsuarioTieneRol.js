@@ -11,6 +11,7 @@ module.exports = {
 
     nombre_relacion:{ // nombre atributo
       type: 'string',
+      minLength: 3,
       required: true, // Por defecto es false
 
     },
