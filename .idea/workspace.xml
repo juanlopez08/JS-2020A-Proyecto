@@ -20,8 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e210fac3-3547-467e-80c6-9e6e7289a73d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/componentes/carta-cupon/carta-cupon.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/componentes/carta-cupon/carta-cupon.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/componentes/carta-cupon/carta-cupon.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/componentes/carta-cupon/carta-cupon.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/Backend/backend/config/datastores.js" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Backend/backend/config/datastores.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +68,7 @@
       <workItem from="1599260306346" duration="8746000" />
       <workItem from="1599599644266" duration="17000" />
       <workItem from="1600227016190" duration="829000" />
+      <workItem from="1600234364449" duration="51000" />
     </task>
     <servers />
   </component>
