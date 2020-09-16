@@ -16,8 +16,28 @@
     </a>
   </li>
   <li>
-    <a [routerLink]="['detalleCupon']" >
-      Ir a detalle cupon
+    <a [routerLink]="['inicio/listaCupon']" >
+      Lista Cupones
+    </a>
+  </li>
+  <li>
+    <a [routerLink]="['inicio/detalleCupon']" >
+      detalle Cupon
+    </a>
+  </li>
+  <li>
+    <a [routerLink]="['inicio/crearCupon']" >
+      crear Cupon
+    </a>
+  </li>
+  <li>
+    <a [routerLink]="['editarCupon']" >
+      editar Cupon
+    </a>
+  </li>
+  <li>
+    <a [routerLink]="['establecimiento']" >
+      Establecimiento
     </a>
   </li>
 </ul>
@@ -26,15 +46,16 @@
 <!--<button (click)="crearCupon()">-->
 <!--  Crear Cupon-->
 <!--</button>-->
-<p>Cupones</p>
-<div *ngFor="let cupon of arregloCupones">
-  <img src="{{cupon.path_imagen_cupon}}" alt="" width="20%" height="20%">
 
-  <p>Descripcion</p>
-  <p>{{cupon.informacion_cupon}}</p>
+<!--<p>Cupones</p>-->
+<!--<div *ngFor="let cupon of arregloCupones">-->
+<!--  <img src="{{cupon.path_imagen_cupon}}" alt="" width="20%" height="20%">-->
 
-  <button>Guardar</button>
-</div>
+<!--  <p>Descripcion:</p>-->
+<!--  <p>{{cupon.informacion_cupon}}</p>-->
+
+<!--  <button>Guardar</button>-->
+<!--</div>-->
 
 
 

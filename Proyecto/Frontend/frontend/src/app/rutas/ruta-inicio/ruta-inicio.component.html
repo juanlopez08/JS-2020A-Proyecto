@@ -1,1 +1,23 @@
 <p>ruta-inicio works!</p>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Imagen</th>
+    <th>Descripción</th>
+    <th>Acciones</th>
+  </tr>
+  <tr *ngFor="let cupon of arregloCupones">
+    <td>{{cupon.id}}</td>
+
+    <td><img src="{{cupon.path_imagen_cupon}}" alt="" width="200" height="200"></td>
+
+    <td>{{cupon.informacion_cupon}}</td>
+    <td>
+      <button (click)="irAEditarCupon(cupon.id)">
+        Editar
+      </button>
+      <button>Eliminar</button>
+    </td>
+  </tr>
+</table>

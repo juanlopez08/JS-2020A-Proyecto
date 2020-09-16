@@ -15,6 +15,9 @@ import { RutaCategoriaComponent } from './rutas/ruta-categoria/ruta-categoria.co
 import { RutaEstablecimientoComponent } from './rutas/ruta-establecimiento/ruta-establecimiento.component';
 import { RutaCuponesGuardadosComponent } from './rutas/ruta-cupones-guardados/ruta-cupones-guardados.component';
 import { RutaDetalleEstablecimientoComponent } from './rutas/ruta-detalle-establecimiento/ruta-detalle-establecimiento.component';
+import { RutaListaCuponComponent } from './rutas/ruta-lista-cupon/ruta-lista-cupon.component';
+import { RutaCrearCuponComponent } from './rutas/ruta-crear-cupon/ruta-crear-cupon.component';
+import { RutaEditarCuponComponent } from './rutas/ruta-editar-cupon/ruta-editar-cupon.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { RutaDetalleEstablecimientoComponent } from './rutas/ruta-detalle-establ
     RutaCategoriaComponent,
     RutaEstablecimientoComponent,
     RutaCuponesGuardadosComponent,
-    RutaDetalleEstablecimientoComponent
+    RutaDetalleEstablecimientoComponent,
+    RutaListaCuponComponent,
+    RutaCrearCuponComponent,
+    RutaEditarCuponComponent
   ],
   imports: [
     BrowserModule,
