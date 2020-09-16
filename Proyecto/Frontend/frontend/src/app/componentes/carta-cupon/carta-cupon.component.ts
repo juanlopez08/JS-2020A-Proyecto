@@ -1,11 +1,11 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-carta-cupon',
   templateUrl: './carta-cupon.component.html',
   styleUrls: ['./carta-cupon.component.css']
 })
-export class CartaCuponComponent implements OnInit {
+export class CartaCuponComponent implements OnInit, OnDestroy{
   @Input()
   urlImagenCupon: string;
 
@@ -15,9 +15,16 @@ export class CartaCuponComponent implements OnInit {
   @Input()
   nombreBoton: string;
 
-  constructor() { }
+  constructor() {
+    console.log('Constructor')
+  }
 
   ngOnInit(): void {
+    console.log('OnInit')
+  }
+
+  ngOnDestroy(): void {
+    console.log('OnDestroy')
   }
 
   @Output()

@@ -1,14 +1,38 @@
-<h1>Lista de Cupones</h1>
 
+<!--<app-carta-cupon-->
+<!--  [urlImagenCupon]="cupon.url"-->
+<!--  [descripcion]="cupon.descripcion"-->
+<!--  [nombreBoton]="cupon.nombreEstablecimiento"-->
+<!--  (eventoDioClicEnBoton)="mensajeConsola($event)"-->
+<!--  (eventoDioClicEnImagen)="mensajeConsola($event)"-->
+<!--&gt;-->
+<!--</app-carta-cupon>-->
+<!--</div>-->
+
+<ul>
+  <li>
+    <a [routerLink]="['inicio']" >
+      Ir Inicio
+    </a>
+  </li>
+  <li>
+    <a [routerLink]="['detalleCupon']" >
+      Ir a detalle cupon
+    </a>
+  </li>
+</ul>
+
+<!--<br>-->
+<!--<button (click)="crearCupon()">-->
+<!--  Crear Cupon-->
+<!--</button>-->
+<p>Cupones</p>
 <div *ngFor="let cupon of arregloCupones">
-<app-carta-cupon
-  [urlImagenCupon]="cupon.url"
-  [descripcion]="cupon.descripcion"
-  [nombreBoton]="cupon.nombreEstablecimiento"
-  (eventoDioClicEnBoton)="mensajeConsola($event)"
-  (eventoDioClicEnImagen)="mensajeConsola($event)"
->
-</app-carta-cupon>
+  <img src="{{cupon.path_imagen_cupon}}" alt="" width="20%" height="20%">
 </div>
 
 
+
+<router-outlet>
+
+</router-outlet>
