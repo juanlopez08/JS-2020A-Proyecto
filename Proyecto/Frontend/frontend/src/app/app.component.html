@@ -29,6 +29,11 @@
 <p>Cupones</p>
 <div *ngFor="let cupon of arregloCupones">
   <img src="{{cupon.path_imagen_cupon}}" alt="" width="20%" height="20%">
+
+  <p>Descripcion</p>
+  <p>{{cupon.informacion_cupon}}</p>
+
+  <button>Guardar</button>
 </div>
 
 
