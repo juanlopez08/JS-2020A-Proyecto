@@ -1,0 +1,62 @@
+
+<form #formularioCupon="ngForm"
+       (ngSubmit)="crearCupon(formularioCupon)">
+  <div>
+    <label for="path_imagen_cupon">URL de la Imagen: </label>
+    <input id="path_imagen_cupon"
+           type="text" name="path_imagen_cupon"
+           [(ngModel)]="pathImagenCupon"
+           required
+           #pathImagenCuponCampo="ngModel"
+           minlength="3"
+    >
+    <div *ngIf="pathImagenCuponCampo.touched && pathImagenCuponCampo.errors">
+      <p *ngIf="pathImagenCuponCampo.errors.required">
+        Error: Campo requerido
+      </p>
+      <p *ngIf="pathImagenCuponCampo.errors.minlength">
+        Error: Longitud minima 3
+      </p>
+    </div>
+
+  </div>
+  <div>
+    <label for="path_codigo_qr_cupon">URL del Codigo QR: </label>
+    <input id="path_codigo_qr_cupon" type="text" name="path_codigo_qr_cupon" [(ngModel)]="pathCodigoQr"  required>
+  </div>
+  <div>
+    <label for="informacion_cupon">Informacion: </label>
+    <input id="informacion_cupon" type="text" name="informacion_cupon" [(ngModel)]="informacionCupon" required>
+  </div>
+  <div>
+    <label for="cantidad_usos">Cantidad de usos: </label>
+    <input id="cantidad_usos" type="number" name="cantidad_usos" [(ngModel)]="cantidadUsos" required>
+  </div>
+  <div>
+   <label for="estado_cupon">Estado: </label>
+    <select name="estado_cupon" id="estado_cupon" [(ngModel)]="estadoCupon" required>
+      <option value="activo">Activo</option>
+      <option value="inactivo">Inactivo</option>
+    </select>
+  </div>
+  <div>
+    <label for="establecimiento">Establecimiento (id): </label>
+    <input id="establecimiento" type="number" name="establecimiento" [(ngModel)]="establecimiento" required>
+  </div>
+  <div>
+    <!--BOTONES-->
+    <button type="button" (click)="ayudaCrearCupon()">
+      Ayuda
+    </button>
+    <button type="submit" [disabled]="!formularioCupon.form.valid">
+      Submit
+    </button>
+    <button type="reset">
+      Reset
+    </button>
+  </div>
+
+</form>
+
+
+

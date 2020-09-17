@@ -24,8 +24,13 @@
       <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-crear-cupon/ruta-crear-cupon.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-crear-cupon/ruta-crear-cupon.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-crear-cupon/ruta-crear-cupon.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-crear-cupon/ruta-crear-cupon.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-editar-cupon/ruta-editar-cupon.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-editar-cupon/ruta-editar-cupon.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-editar-cupon/ruta-editar-cupon.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-editar-cupon/ruta-editar-cupon.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-inicio/ruta-inicio.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-inicio/ruta-inicio.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-inicio/ruta-inicio.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-inicio/ruta-inicio.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/servicios/http/cupon.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/servicios/http/cupon.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +73,7 @@
       <workItem from="1600227016190" duration="829000" />
       <workItem from="1600234364449" duration="51000" />
       <workItem from="1600274443343" duration="1216000" />
-      <workItem from="1600276051896" duration="3210000" />
+      <workItem from="1600276051896" duration="12857000" />
     </task>
     <servers />
   </component>
@@ -96,13 +101,17 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="77" y="27" width="1033" height="576" key="dock-window-1/67.27.1299.741@67.27.1299.741" timestamp="1599237226903" />
-    <state x="380" y="175" width="672" height="677" key="run.anything.popup" timestamp="1600237659918">
+    <state x="365" y="115" width="700" height="530" key="recent.locations.popup" timestamp="1600306753398">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="380" y="175" width="672" height="677" key="run.anything.popup/67.27.1299.741@67.27.1299.741" timestamp="1600237659918" />
-    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1599154587489">
+    <state x="365" y="115" width="700" height="530" key="recent.locations.popup/67.27.1299.741@67.27.1299.741" timestamp="1600306753398" />
+    <state x="380" y="175" width="672" height="677" key="run.anything.popup" timestamp="1600307907603">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1599154587489" />
+    <state x="380" y="175" width="672" height="677" key="run.anything.popup/67.27.1299.741@67.27.1299.741" timestamp="1600307907603" />
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1600306434821">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1600306434821" />
   </component>
 </project>

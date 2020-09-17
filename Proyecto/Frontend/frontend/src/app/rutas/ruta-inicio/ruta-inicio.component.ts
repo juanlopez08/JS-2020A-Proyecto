@@ -22,6 +22,23 @@ export class RutaInicioComponent implements OnInit {
     this._router.navigate(ruta) ;
   }
 
+  eliminarCupon(id: number) {
+    const obsEliminar = this._cuponService
+      .eliminarCupon(id);
+    obsEliminar
+      .subscribe(
+        () => {
+          // Borrando de la interfaz
+          const indice = this.arregloCupones
+            .findIndex(u => u.id === id);
+          this.arregloCupones.splice(indice, 1);
+        },
+        (error) => {
+          console.error('Error', error);
+        }
+      );
+  }
+
   ngOnInit(): void {
     const observableTraerTodos=this._cuponService.traerTodos();
     observableTraerTodos.subscribe(

@@ -12,27 +12,22 @@
 <ul>
   <li>
     <a [routerLink]="['inicio']" >
-      Ir Inicio
+      Ir Inicio --- HOME
     </a>
   </li>
   <li>
-    <a [routerLink]="['inicio/listaCupon']" >
+    <a [routerLink]="['listaCupon']" >
       Lista Cupones
     </a>
   </li>
   <li>
-    <a [routerLink]="['inicio/detalleCupon']" >
+    <a [routerLink]="['detalleCupon']" >
       detalle Cupon
     </a>
   </li>
   <li>
-    <a [routerLink]="['inicio/crearCupon']" >
+    <a [routerLink]="['crearCupon']" >
       crear Cupon
-    </a>
-  </li>
-  <li>
-    <a [routerLink]="['editarCupon']" >
-      editar Cupon
     </a>
   </li>
   <li>
@@ -47,18 +42,5 @@
 <!--  Crear Cupon-->
 <!--</button>-->
 
-<!--<p>Cupones</p>-->
-<!--<div *ngFor="let cupon of arregloCupones">-->
-<!--  <img src="{{cupon.path_imagen_cupon}}" alt="" width="20%" height="20%">-->
 
-<!--  <p>Descripcion:</p>-->
-<!--  <p>{{cupon.informacion_cupon}}</p>-->
-
-<!--  <button>Guardar</button>-->
-<!--</div>-->
-
-
-
-<router-outlet>
-
-</router-outlet>
+<router-outlet> </router-outlet>

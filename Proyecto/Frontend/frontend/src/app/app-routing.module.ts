@@ -17,25 +17,23 @@ const routes: Routes = [
   {
     component:RutaInicioComponent,
     path:'inicio',
-    children:[
-      {
-        path:'detalleCupon',
-        component:RutaDetalleCuponComponent,
-      },
-      {
-        path:'listaCupon',
-        component:RutaListaCuponComponent
-      },
-      {
-        path:'crearCupon',
-        component:RutaCrearCuponComponent
-      },
-      {
-        path:'',
-        redirectTo: 'inicio',
-        pathMatch: 'full',
-      },
-    ]
+  },
+  {
+    path:'detalleCupon',
+    component:RutaDetalleCuponComponent,
+  },
+  {
+    path:'listaCupon',
+    component:RutaListaCuponComponent
+  },
+  {
+    path:'crearCupon',
+    component:RutaCrearCuponComponent
+  },
+  {
+    path:'',
+    redirectTo: 'inicio',
+    pathMatch: 'full',
   },
   {
     path:'editarCupon/:id',

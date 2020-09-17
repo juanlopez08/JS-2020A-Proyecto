@@ -18,6 +18,8 @@ import { RutaDetalleEstablecimientoComponent } from './rutas/ruta-detalle-establ
 import { RutaListaCuponComponent } from './rutas/ruta-lista-cupon/ruta-lista-cupon.component';
 import { RutaCrearCuponComponent } from './rutas/ruta-crear-cupon/ruta-crear-cupon.component';
 import { RutaEditarCuponComponent } from './rutas/ruta-editar-cupon/ruta-editar-cupon.component';
+import { FormularioCuponComponent } from './componentes/formularios/formulario-cupon/formulario-cupon.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -34,12 +36,14 @@ import { RutaEditarCuponComponent } from './rutas/ruta-editar-cupon/ruta-editar-
     RutaDetalleEstablecimientoComponent,
     RutaListaCuponComponent,
     RutaCrearCuponComponent,
-    RutaEditarCuponComponent
+    RutaEditarCuponComponent,
+    FormularioCuponComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [
     CuponService,

@@ -15,12 +15,22 @@ export class CuponService {
     return this._httpClient.get(this.url + '/cupon')
   }
 
-  //POST / Usuario
+  //POST / Cupon
   crearCupon(cupon){
-    return this._httpClient.post(
-      this.url + '/cupon', //URL
-      cupon
+    return this._httpClient.post(this.url + '/cupon', cupon)
+  }
+
+  //GET / Cupon
+  obtenerUnCuponPorId(idCupon:number){
+    return this._httpClient.get(this.url + '/cupon/' + idCupon)
+  }
+
+  //DELETE / Cupon
+  eliminarCupon(idCupon:number){
+    return this._httpClient.delete(
+      this.url + '/cupon/' + idCupon   //URL
     )
   }
+
 
 }

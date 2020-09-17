@@ -1,5 +1,10 @@
 <p>ruta-inicio works!</p>
 
+<h1>Cupon</h1>
+<button [routerLink]="['/crearCupon']" >Crear Cupon</button>
+
+<router-outlet></router-outlet>
+
 <table>
   <tr>
     <th>ID</th>
@@ -17,7 +22,9 @@
       <button (click)="irAEditarCupon(cupon.id)">
         Editar
       </button>
-      <button>Eliminar</button>
+      <button (click)="eliminarCupon(cupon.id)">
+        Eliminar
+      </button>
     </td>
   </tr>
 </table>

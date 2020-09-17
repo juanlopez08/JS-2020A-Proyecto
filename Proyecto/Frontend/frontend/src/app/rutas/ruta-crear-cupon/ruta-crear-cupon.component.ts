@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CuponService} from "../../servicios/http/cupon.service";
 
 @Component({
   selector: 'app-ruta-crear-cupon',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RutaCrearCuponComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 }
