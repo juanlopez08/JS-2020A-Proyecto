@@ -14,7 +14,7 @@
   <tr *ngFor="let cupon of arregloCupones">
     <td>{{cupon.id}}</td>
 
-    <td><img src="{{cupon.path_imagen_cupon}}" alt="" width="200" height="200"></td>
+    <td><img src="{{cupon.path_imagen_cupon}}" alt="" width="200" height="200" (click)="irAVerCupon(cupon.id)"></td>
 
     <td>{{cupon.informacion_cupon}}</td>
     <td>

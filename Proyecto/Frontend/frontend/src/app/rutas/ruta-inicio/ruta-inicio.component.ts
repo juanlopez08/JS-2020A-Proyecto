@@ -22,6 +22,12 @@ export class RutaInicioComponent implements OnInit {
     this._router.navigate(ruta) ;
   }
 
+  irAVerCupon(id:number){
+    const ruta = ['/detalleCupon', id]
+    // /editarCupon/1
+    this._router.navigate(ruta) ;
+  }
+
   eliminarCupon(id: number) {
     const obsEliminar = this._cuponService.eliminarCupon(id);
     obsEliminar.subscribe(

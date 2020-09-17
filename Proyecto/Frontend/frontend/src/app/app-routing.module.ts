@@ -22,12 +22,12 @@ const routes: Routes = [
     path:'inicio',
   },
   {
-    path:'detalleCupon',
-    component:RutaDetalleCuponComponent,
-  },
-  {
     path:'listaCupon',
     component:RutaListaCuponComponent
+  },
+  {
+    path:'detalleCupon/:id',
+    component:RutaDetalleCuponComponent,
   },
   {
     path:'crearCupon',
