@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CuponService} from "../../../servicios/http/cupon.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-formulario-cupon',
@@ -10,6 +11,7 @@ export class FormularioCuponComponent implements OnInit {
 
   constructor(
     private readonly _cuponService:CuponService,
+    private readonly _router: Router
   ) { }
 
   pathImagenCupon:string;
@@ -36,8 +38,9 @@ export class FormularioCuponComponent implements OnInit {
     obsCrearCupon
       .subscribe(
         (datos:Object) => {
-          console.log('Nuevo Cupon', datos)
-        },
+          alert('Nuevo cupon creado');
+          console.log('Nuevo Cupon', datos);
+           },
         (error) => {
           console.error('Error', error);
         }

@@ -12,8 +12,11 @@ import {RutaRegistroComponent} from "./rutas/ruta-registro/ruta-registro.compone
 import {RutaListaCuponComponent} from "./rutas/ruta-lista-cupon/ruta-lista-cupon.component";
 import {RutaCrearCuponComponent} from "./rutas/ruta-crear-cupon/ruta-crear-cupon.component";
 import {RutaEditarCuponComponent} from "./rutas/ruta-editar-cupon/ruta-editar-cupon.component";
+import {RutaCrearEstablecimientoComponent} from "./rutas/ruta-crear-establecimiento/ruta-crear-establecimiento.component";
+import {RutaEditarEstablecimientoComponent} from "./rutas/ruta-editar-establecimiento/ruta-editar-establecimiento.component";
 
 const routes: Routes = [
+  // CUPONES
   {
     component:RutaInicioComponent,
     path:'inicio',
@@ -31,11 +34,6 @@ const routes: Routes = [
     component:RutaCrearCuponComponent
   },
   {
-    path:'',
-    redirectTo: 'inicio',
-    pathMatch: 'full',
-  },
-  {
     path:'editarCupon/:id',
     component:RutaEditarCuponComponent
   },
@@ -43,20 +41,30 @@ const routes: Routes = [
     component:RutaCuponesGuardadosComponent,
     path:'cuponesGuardados'
   },
+  // CATEGORIAS
   {
     component:RutaCategoriaComponent,
     path:'categoria'
   },
+  // ESTABLECIMIENTOS
   {
-    component:RutaEstablecimientoComponent,
-    path:'establecimiento',
-    children:[
-      {
-        component:RutaDetalleEstablecimientoComponent,
-        path:'detalleEstablecimiento'
-      },
-    ]
+    component: RutaEstablecimientoComponent,
+    path: 'establecimiento',
   },
+  {
+    component:RutaDetalleEstablecimientoComponent,
+    path:'detalleEstablecimiento'
+  },
+  {
+    component: RutaCrearEstablecimientoComponent,
+    path:'crearEstablecimiento'
+  },
+  {
+    component:RutaEditarEstablecimientoComponent,
+    path:'editarEstablecimiento/:id'
+  },
+
+
   {
     component:RutaLoginComponent,
     path:'login'

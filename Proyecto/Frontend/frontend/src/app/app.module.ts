@@ -20,6 +20,9 @@ import { RutaCrearCuponComponent } from './rutas/ruta-crear-cupon/ruta-crear-cup
 import { RutaEditarCuponComponent } from './rutas/ruta-editar-cupon/ruta-editar-cupon.component';
 import { FormularioCuponComponent } from './componentes/formularios/formulario-cupon/formulario-cupon.component';
 import {FormsModule} from "@angular/forms";
+import {EstablecimientoService} from "./servicios/http/establecimiento.service";
+import { RutaEditarEstablecimientoComponent } from './rutas/ruta-editar-establecimiento/ruta-editar-establecimiento.component';
+import { RutaCrearEstablecimientoComponent } from './rutas/ruta-crear-establecimiento/ruta-crear-establecimiento.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,9 @@ import {FormsModule} from "@angular/forms";
     RutaListaCuponComponent,
     RutaCrearCuponComponent,
     RutaEditarCuponComponent,
-    FormularioCuponComponent
+    FormularioCuponComponent,
+    RutaEditarEstablecimientoComponent,
+    RutaCrearEstablecimientoComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +52,7 @@ import {FormsModule} from "@angular/forms";
   ],
   providers: [
     CuponService,
+    EstablecimientoService,
   ],
   bootstrap: [AppComponent]
 })

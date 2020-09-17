@@ -18,15 +18,13 @@ export class RutaInicioComponent implements OnInit {
 
   irAEditarCupon(id:number){
     const ruta = ['/editarCupon', id]
-    //inicio/editarCupon/1
+    // /editarCupon/1
     this._router.navigate(ruta) ;
   }
 
   eliminarCupon(id: number) {
-    const obsEliminar = this._cuponService
-      .eliminarCupon(id);
-    obsEliminar
-      .subscribe(
+    const obsEliminar = this._cuponService.eliminarCupon(id);
+    obsEliminar.subscribe(
         () => {
           // Borrando de la interfaz
           const indice = this.arregloCupones
