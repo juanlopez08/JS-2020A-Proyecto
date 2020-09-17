@@ -23,6 +23,7 @@ import {FormsModule} from "@angular/forms";
 import {EstablecimientoService} from "./servicios/http/establecimiento.service";
 import { RutaEditarEstablecimientoComponent } from './rutas/ruta-editar-establecimiento/ruta-editar-establecimiento.component';
 import { RutaCrearEstablecimientoComponent } from './rutas/ruta-crear-establecimiento/ruta-crear-establecimiento.component';
+import { FormularioEstablecimientoComponent } from './componentes/formularios/formulario-establecimiento/formulario-establecimiento.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { RutaCrearEstablecimientoComponent } from './rutas/ruta-crear-establecim
     RutaEditarCuponComponent,
     FormularioCuponComponent,
     RutaEditarEstablecimientoComponent,
-    RutaCrearEstablecimientoComponent
+    RutaCrearEstablecimientoComponent,
+    FormularioEstablecimientoComponent
   ],
   imports: [
     BrowserModule,
