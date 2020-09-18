@@ -1,0 +1,32 @@
+<h1>Usuarios</h1>
+<button [routerLink]="['/crearUsuario']" >Crear Usuario</button>
+
+<router-outlet></router-outlet>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Cedula</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Correo</th>
+    <th>Bithdate</th>
+  </tr>
+  <tr *ngFor="let usuario of arregloUsuario">
+    <td>{{usuario.id}}</td>
+    <td>{{usuario.cedula}}</td>
+    <td>{{usuario.nombre_usuario}}</td>
+    <td>{{usuario.apellido_usuario}}</td>
+    <td>{{usuario.correo_usuario}}</td>
+    <td>{{usuario.birthdate_usuario}}</td>
+
+    <td>
+      <button (click)="irAeditarUsuario(usuario.id)">
+        Editar
+      </button>
+      <button (click)="eliminarUsuario(usuario.id)">
+        Eliminar
+      </button>
+    </td>
+  </tr>
+</table>

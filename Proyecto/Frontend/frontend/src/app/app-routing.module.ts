@@ -14,6 +14,9 @@ import {RutaCrearCuponComponent} from "./rutas/ruta-crear-cupon/ruta-crear-cupon
 import {RutaEditarCuponComponent} from "./rutas/ruta-editar-cupon/ruta-editar-cupon.component";
 import {RutaCrearEstablecimientoComponent} from "./rutas/ruta-crear-establecimiento/ruta-crear-establecimiento.component";
 import {RutaEditarEstablecimientoComponent} from "./rutas/ruta-editar-establecimiento/ruta-editar-establecimiento.component";
+import {RutaUsuarioComponent} from "./rutas/ruta-usuario/ruta-usuario.component";
+import {RutaCrearUsuarioComponent} from "./rutas/ruta-crear-usuario/ruta-crear-usuario.component";
+import {RutaEliminarUsuarioComponent} from "./rutas/ruta-eliminar-usuario/ruta-eliminar-usuario.component";
 
 const routes: Routes = [
   // CUPONES
@@ -64,7 +67,19 @@ const routes: Routes = [
     path:'editarEstablecimiento/:id'
   },
 
-
+  // USUARIOS
+  {
+    component:RutaUsuarioComponent,
+    path:'usuarios'
+  },
+  {
+    component:RutaCrearUsuarioComponent,
+    path:'crearUsuario'
+  },
+  {
+    component:RutaEliminarUsuarioComponent,
+    path:'eliminarUsuario'
+  },
   {
     component:RutaLoginComponent,
     path:'login'

@@ -24,6 +24,10 @@ import {EstablecimientoService} from "./servicios/http/establecimiento.service";
 import { RutaEditarEstablecimientoComponent } from './rutas/ruta-editar-establecimiento/ruta-editar-establecimiento.component';
 import { RutaCrearEstablecimientoComponent } from './rutas/ruta-crear-establecimiento/ruta-crear-establecimiento.component';
 import { FormularioEstablecimientoComponent } from './componentes/formularios/formulario-establecimiento/formulario-establecimiento.component';
+import { RutaUsuarioComponent } from './rutas/ruta-usuario/ruta-usuario.component';
+import {UsuarioService} from "./servicios/http/usuario.service";
+import { RutaCrearUsuarioComponent } from './rutas/ruta-crear-usuario/ruta-crear-usuario.component';
+import { RutaEliminarUsuarioComponent } from './rutas/ruta-eliminar-usuario/ruta-eliminar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,10 @@ import { FormularioEstablecimientoComponent } from './componentes/formularios/fo
     FormularioCuponComponent,
     RutaEditarEstablecimientoComponent,
     RutaCrearEstablecimientoComponent,
-    FormularioEstablecimientoComponent
+    FormularioEstablecimientoComponent,
+    RutaUsuarioComponent,
+    RutaCrearUsuarioComponent,
+    RutaEliminarUsuarioComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +62,7 @@ import { FormularioEstablecimientoComponent } from './componentes/formularios/fo
   providers: [
     CuponService,
     EstablecimientoService,
+    UsuarioService,
   ],
   bootstrap: [AppComponent]
 })
