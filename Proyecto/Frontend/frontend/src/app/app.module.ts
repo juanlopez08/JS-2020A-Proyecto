@@ -29,6 +29,10 @@ import { RutaCrearUsuarioComponent } from './rutas/ruta-crear-usuario/ruta-crear
 import { FormularioUsuarioComponent } from './componentes/formularios/formulario-usuario/formulario-usuario.component';
 import { RutaEditarUsuarioComponent } from './rutas/ruta-editar-usuario/ruta-editar-usuario.component';
 import { RutaArticuloComponent } from './rutas/ruta-articulo/ruta-articulo.component';
+import { RutaCrearArticuloComponent } from './rutas/ruta-crear-articulo/ruta-crear-articulo.component';
+import { RutaEditarArticuloComponent } from './rutas/ruta-editar-articulo/ruta-editar-articulo.component';
+import {ArticuloService} from "./servicios/http/articulo.service";
+import { FormularioArticuloComponent } from './componentes/formularios/formulario-articulo/formulario-articulo.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +57,10 @@ import { RutaArticuloComponent } from './rutas/ruta-articulo/ruta-articulo.compo
     RutaCrearUsuarioComponent,
     FormularioUsuarioComponent,
     RutaEditarUsuarioComponent,
-    RutaArticuloComponent
+    RutaArticuloComponent,
+    RutaCrearArticuloComponent,
+    RutaEditarArticuloComponent,
+    FormularioArticuloComponent
   ],
   imports: [
     BrowserModule,
@@ -65,6 +72,7 @@ import { RutaArticuloComponent } from './rutas/ruta-articulo/ruta-articulo.compo
     CuponService,
     EstablecimientoService,
     UsuarioService,
+    ArticuloService,
   ],
   bootstrap: [AppComponent]
 })

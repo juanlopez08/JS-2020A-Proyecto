@@ -16,6 +16,9 @@ import {RutaEditarEstablecimientoComponent} from "./rutas/ruta-editar-establecim
 import {RutaUsuarioComponent} from "./rutas/ruta-usuario/ruta-usuario.component";
 import {RutaCrearUsuarioComponent} from "./rutas/ruta-crear-usuario/ruta-crear-usuario.component";
 import {RutaEditarUsuarioComponent} from "./rutas/ruta-editar-usuario/ruta-editar-usuario.component";
+import {RutaArticuloComponent} from "./rutas/ruta-articulo/ruta-articulo.component";
+import {RutaCrearArticuloComponent} from "./rutas/ruta-crear-articulo/ruta-crear-articulo.component";
+import {RutaEditarArticuloComponent} from "./rutas/ruta-editar-articulo/ruta-editar-articulo.component";
 
 const routes: Routes = [
   // CUPONES
@@ -61,7 +64,19 @@ const routes: Routes = [
     component:RutaEditarEstablecimientoComponent,
     path:'editarEstablecimiento/:id'
   },
-
+  // ARTICULOS
+  {
+    component:RutaArticuloComponent,
+    path:'articulo'
+  },
+  {
+    component:RutaCrearArticuloComponent,
+    path:'crearArticulo'
+  },
+  {
+    component:RutaEditarArticuloComponent,
+    path:'editarArticulo/:id'
+  },
   // USUARIOS
   {
     component:RutaUsuarioComponent,

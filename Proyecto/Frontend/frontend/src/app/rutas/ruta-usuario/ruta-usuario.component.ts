@@ -35,7 +35,6 @@ export class RutaUsuarioComponent implements OnInit {
     );
   }
 
-
   ngOnInit(): void {
     const observableTraerTodosUsuarios=this._usuarioService.traerTodosUsuarios();
     observableTraerTodosUsuarios.subscribe(
