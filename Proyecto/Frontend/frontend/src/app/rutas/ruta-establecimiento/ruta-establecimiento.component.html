@@ -1,0 +1,31 @@
+<h1>Establecimientos</h1>
+<h2>AVISO!!! No se pueden eliminar establecimientos que aun contengan cupones</h2>
+<button [routerLink]="['/crearEstablecimiento']" >Crear Establecimiento</button>
+
+<router-outlet></router-outlet>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Categoria</th>
+    <th>Telefono</th>
+    <th>Direccion</th>
+  </tr>
+  <tr *ngFor="let establecimiento of arregloEstablecimiento">
+    <td>{{establecimiento.id}}</td>
+    <td>{{establecimiento.nombre_establecimiento}}</td>
+    <td>{{establecimiento.categoria_establecimiento}}</td>
+    <td>{{establecimiento.telefono_establecimiento}}</td>
+    <td>{{establecimiento.direccion_establecimiento}}</td>
+
+    <td>
+      <button (click)="irAEditarEstablecimiento(establecimiento.id)">
+        Editar
+      </button>
+      <button (click)="eliminarEstablecimiento(establecimiento.id)">
+        Eliminar
+      </button>
+    </td>
+  </tr>
+</table>

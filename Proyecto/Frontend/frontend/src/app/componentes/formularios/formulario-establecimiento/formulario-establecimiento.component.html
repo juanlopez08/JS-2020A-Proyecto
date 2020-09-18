@@ -1,0 +1,99 @@
+<p>Ingrese los siguientes datos:</p>
+
+<form #formularioEstablecimiento="ngForm"
+      (ngSubmit)="crearEstablecimiento(formularioEstablecimiento)">
+  <div>
+    <label for="nombre_establecimiento">Nombre: </label>
+    <input id="nombre_establecimiento"
+           type="text" name="path_imagen_cupon"
+           [(ngModel)]="nombreEstablecimiento"
+           required
+           #pathNombreEstablecimiento="ngModel"
+           minlength="3"
+    >
+    <div *ngIf="pathNombreEstablecimiento.touched && pathNombreEstablecimiento.errors">
+      <p *ngIf="pathNombreEstablecimiento.errors.required">
+        Error: Campo requerido
+      </p>
+      <p *ngIf="pathNombreEstablecimiento.errors.minlength">
+        Error: Longitud minima 3
+      </p>
+    </div>
+  </div>
+
+  <div>
+    <label for="categoria_establecimiento">Categoria: </label>
+    <input id="categoria_establecimiento"
+           type="text" name="categoria_establecimiento"
+           [(ngModel)]="categoriaEstablecimiento"
+           required
+           #categoriaEstablecimientoCampo="ngModel"
+           minlength="3"
+    >
+    <div *ngIf="categoriaEstablecimientoCampo.touched && categoriaEstablecimientoCampo.errors">
+      <p *ngIf="categoriaEstablecimientoCampo.errors.required">
+        Error: Campo requerido
+      </p>
+      <p *ngIf="categoriaEstablecimientoCampo.errors.minlength">
+        Error: Longitud minima 3
+      </p>
+    </div>
+  </div>
+
+  <div>
+    <label for="telefono_establecimiento">Telefono: </label>
+    <input id="telefono_establecimiento"
+           type="text" name="telefono_establecimiento"
+           [(ngModel)]="telefonoEstablecimiento"
+           required
+           #telefonoCampo="ngModel"
+           minlength="3"
+    >
+    <div *ngIf="telefonoCampo.touched && telefonoCampo.errors">
+      <p *ngIf="telefonoCampo.errors.required">
+        Error: Campo requerido
+      </p>
+      <p *ngIf="telefonoCampo.errors.minlength">
+        Error: Longitud minima 3
+      </p>
+    </div>
+  </div>
+
+  <div>
+    <label for="direccion_establecimiento">Direccion: </label>
+    <input id="direccion_establecimiento"
+           type="text" name="direccion_establecimiento"
+           [(ngModel)]="direccionEstablecimiento"
+           required
+           #direccionCampo="ngModel"
+           minlength="3"
+    >
+    <div *ngIf="direccionCampo.touched && direccionCampo.errors">
+      <p *ngIf="direccionCampo.errors.required">
+        Error: Campo requerido
+      </p>
+      <p *ngIf="direccionCampo.errors.minlength">
+        Error: Longitud minima 3
+      </p>
+      <p *ngIf="direccionCampo.errors.minlength">
+        Error: Longitud minima 3
+      </p>
+    </div>
+  </div>
+
+  <!--BOTONES-->
+  <div>
+    <button type="button" (click)="ayudaCrearEstablecimiento()">
+      Ayuda
+    </button>
+    <button type="submit" [disabled]="!formularioEstablecimiento.form.valid">
+      Submit
+    </button>
+    <button type="reset">
+      Reset
+    </button>
+  </div>
+
+</form>
+
+

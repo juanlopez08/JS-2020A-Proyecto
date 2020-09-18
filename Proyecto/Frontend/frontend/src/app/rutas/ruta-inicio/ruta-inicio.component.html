@@ -1,0 +1,32 @@
+
+<h1>Cupones</h1>
+<button [routerLink]="['/crearCupon']" >Crear Cupon</button>
+
+<router-outlet></router-outlet>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Imagen</th>
+    <th>Descripción</th>
+    <th>Acciones</th>
+  </tr>
+  <tr *ngFor="let cupon of arregloCupones">
+    <td>{{cupon.id}}</td>
+
+    <td><img src="{{cupon.path_imagen_cupon}}" alt="" width="200" height="200" (click)="irAVerCupon(cupon.id)"></td>
+
+    <td>{{cupon.informacion_cupon}}</td>
+    <td>
+      <button (click)="irAEditarCupon(cupon.id)">
+        Editar
+      </button>
+      <button (click)="eliminarCupon(cupon.id)">
+        Eliminar
+      </button>
+      <button type="button">
+        Guardar
+      </button>
+    </td>
+  </tr>
+</table>
