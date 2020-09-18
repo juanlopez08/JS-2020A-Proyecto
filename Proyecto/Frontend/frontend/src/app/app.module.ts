@@ -11,7 +11,6 @@ import { RutaInicioComponent } from './rutas/ruta-inicio/ruta-inicio.component';
 import { RutaLoginComponent } from './rutas/ruta-login/ruta-login.component';
 import { RutaRegistroComponent } from './rutas/ruta-registro/ruta-registro.component';
 import { RutaPerfilComponent } from './rutas/ruta-perfil/ruta-perfil.component';
-import { RutaCategoriaComponent } from './rutas/ruta-categoria/ruta-categoria.component';
 import { RutaEstablecimientoComponent } from './rutas/ruta-establecimiento/ruta-establecimiento.component';
 import { RutaCuponesGuardadosComponent } from './rutas/ruta-cupones-guardados/ruta-cupones-guardados.component';
 import { RutaDetalleEstablecimientoComponent } from './rutas/ruta-detalle-establecimiento/ruta-detalle-establecimiento.component';
@@ -27,7 +26,9 @@ import { FormularioEstablecimientoComponent } from './componentes/formularios/fo
 import { RutaUsuarioComponent } from './rutas/ruta-usuario/ruta-usuario.component';
 import {UsuarioService} from "./servicios/http/usuario.service";
 import { RutaCrearUsuarioComponent } from './rutas/ruta-crear-usuario/ruta-crear-usuario.component';
-import { RutaEliminarUsuarioComponent } from './rutas/ruta-eliminar-usuario/ruta-eliminar-usuario.component';
+import { FormularioUsuarioComponent } from './componentes/formularios/formulario-usuario/formulario-usuario.component';
+import { RutaEditarUsuarioComponent } from './rutas/ruta-editar-usuario/ruta-editar-usuario.component';
+import { RutaArticuloComponent } from './rutas/ruta-articulo/ruta-articulo.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,6 @@ import { RutaEliminarUsuarioComponent } from './rutas/ruta-eliminar-usuario/ruta
     RutaLoginComponent,
     RutaRegistroComponent,
     RutaPerfilComponent,
-    RutaCategoriaComponent,
     RutaEstablecimientoComponent,
     RutaCuponesGuardadosComponent,
     RutaDetalleEstablecimientoComponent,
@@ -51,7 +51,9 @@ import { RutaEliminarUsuarioComponent } from './rutas/ruta-eliminar-usuario/ruta
     FormularioEstablecimientoComponent,
     RutaUsuarioComponent,
     RutaCrearUsuarioComponent,
-    RutaEliminarUsuarioComponent
+    FormularioUsuarioComponent,
+    RutaEditarUsuarioComponent,
+    RutaArticuloComponent
   ],
   imports: [
     BrowserModule,

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RutaCategoriaComponent } from './ruta-categoria.component';
+import { RutaArticuloComponent } from './ruta-articulo.component';
 
-describe('RutaCategoriaComponent', () => {
-  let component: RutaCategoriaComponent;
-  let fixture: ComponentFixture<RutaCategoriaComponent>;
+describe('RutaArticuloComponent', () => {
+  let component: RutaArticuloComponent;
+  let fixture: ComponentFixture<RutaArticuloComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RutaCategoriaComponent ]
+      declarations: [ RutaArticuloComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RutaCategoriaComponent);
+    fixture = TestBed.createComponent(RutaArticuloComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

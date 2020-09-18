@@ -5,7 +5,6 @@ import {RutaInicioComponent} from "./rutas/ruta-inicio/ruta-inicio.component";
 import {RutaCuponesGuardadosComponent} from "./rutas/ruta-cupones-guardados/ruta-cupones-guardados.component";
 import {RutaEstablecimientoComponent} from "./rutas/ruta-establecimiento/ruta-establecimiento.component";
 import {RutaDetalleEstablecimientoComponent} from "./rutas/ruta-detalle-establecimiento/ruta-detalle-establecimiento.component";
-import {RutaCategoriaComponent} from "./rutas/ruta-categoria/ruta-categoria.component";
 import {RutaLoginComponent} from "./rutas/ruta-login/ruta-login.component";
 import {RutaPerfilComponent} from "./rutas/ruta-perfil/ruta-perfil.component";
 import {RutaRegistroComponent} from "./rutas/ruta-registro/ruta-registro.component";
@@ -16,7 +15,7 @@ import {RutaCrearEstablecimientoComponent} from "./rutas/ruta-crear-establecimie
 import {RutaEditarEstablecimientoComponent} from "./rutas/ruta-editar-establecimiento/ruta-editar-establecimiento.component";
 import {RutaUsuarioComponent} from "./rutas/ruta-usuario/ruta-usuario.component";
 import {RutaCrearUsuarioComponent} from "./rutas/ruta-crear-usuario/ruta-crear-usuario.component";
-import {RutaEliminarUsuarioComponent} from "./rutas/ruta-eliminar-usuario/ruta-eliminar-usuario.component";
+import {RutaEditarUsuarioComponent} from "./rutas/ruta-editar-usuario/ruta-editar-usuario.component";
 
 const routes: Routes = [
   // CUPONES
@@ -44,11 +43,7 @@ const routes: Routes = [
     component:RutaCuponesGuardadosComponent,
     path:'cuponesGuardados'
   },
-  // CATEGORIAS
-  {
-    component:RutaCategoriaComponent,
-    path:'categoria'
-  },
+
   // ESTABLECIMIENTOS
   {
     component: RutaEstablecimientoComponent,
@@ -77,8 +72,8 @@ const routes: Routes = [
     path:'crearUsuario'
   },
   {
-    component:RutaEliminarUsuarioComponent,
-    path:'eliminarUsuario'
+    component:RutaEditarUsuarioComponent,
+    path:'editarUsuario/:id'
   },
   {
     component:RutaLoginComponent,

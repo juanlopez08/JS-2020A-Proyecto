@@ -1,0 +1,134 @@
+
+<form #formularioUsuario="ngForm"
+      (ngSubmit)="crearUsuario(formularioUsuario)">
+  <div>
+    <label for="cedula">Cedula: </label>
+    <input id="cedula"
+           type="text" name="cedula"
+           [(ngModel)]="cedulaUsuario"
+           required
+           #cedulaUsuarioCampo="ngModel"
+           minlength="3"
+    >
+    <div *ngIf="cedulaUsuarioCampo.touched && cedulaUsuarioCampo.errors">
+      <p *ngIf="cedulaUsuarioCampo.errors.required">
+        Error: Campo requerido
+      </p>
+      <p *ngIf="cedulaUsuarioCampo.errors.minlength">
+        Error: Longitud minima 3
+      </p>
+    </div>
+  </div>
+  <div>
+    <label for="nombre_usuario">Nombre: </label>
+    <input id="nombre_usuario"
+           type="text" name="nombre_usuario"
+           [(ngModel)]="nombreUsuario"
+           required
+           #nombreUsuarioCampo="ngModel"
+           minlength="3"
+    >
+    <div *ngIf="nombreUsuarioCampo.touched && nombreUsuarioCampo.errors">
+      <p *ngIf="nombreUsuarioCampo.errors.required">
+        Error: Campo requerido
+      </p>
+      <p *ngIf="nombreUsuarioCampo.errors.minlength">
+        Error: Longitud minima 3
+      </p>
+    </div>
+  </div>
+  <div>
+    <label for="apellido_usuario">Apellido: </label>
+    <input id="apellido_usuario"
+           type="text" name="apellido_usuario"
+           [(ngModel)]="apellidoUsuario"
+           required
+           #apellidoCampo="ngModel"
+           minlength="3"
+    >
+    <div *ngIf="apellidoCampo.touched && apellidoCampo.errors">
+      <p *ngIf="apellidoCampo.errors.required">
+        Error: Campo requerido
+      </p>
+      <p *ngIf="apellidoCampo.errors.minlength">
+        Error: Longitud minima 3
+      </p>
+    </div>
+  </div>
+  <div>
+    <label for="correo_usuario">Correo: </label>
+    <input id="correo_usuario"
+           type="text" name="correo_usuario"
+           [(ngModel)]="correoUsuario"
+           required
+           #correoCampo="ngModel"
+           minlength="3"
+    >
+    <div *ngIf="correoCampo.touched && correoCampo.errors">
+      <p *ngIf="correoCampo.errors.required">
+        Error: Campo requerido
+      </p>
+<!--  VALIDAR    -->
+<!--  QUE ES   -->
+<!--  EMAIL    -->
+<!--  REEMPLAZAR LA VALIDACION DE LONGITUD MINIMA    -->
+      <p *ngIf="correoCampo.errors.minlength">
+        Error: Longitud minima 3
+      </p>
+    </div>
+  </div>
+  <div>
+    <label for="password_usuario">Contraseña: </label>
+    <input id="password_usuario"
+           type="text" name="password_usuario"
+           [(ngModel)]="passwordUsuario"
+           required
+           #passwordCampo="ngModel"
+           minlength="8"
+    >
+    <div *ngIf="passwordCampo.touched && passwordCampo.errors">
+      <p *ngIf="passwordCampo.errors.required">
+        Error: Campo requerido
+      </p>
+      <p *ngIf="passwordCampo.errors.minlength">
+        Error: Longitud minima 8
+      </p>
+    </div>
+  </div>
+  <div>
+    <label for="birthdate_usuario">Fecha de nacimiento: </label>
+    <input id="birthdate_usuario"
+           type="text" name="birthdate_usuario"
+           [(ngModel)]="birthdateUsuario"
+           required
+           #birthdateCampo="ngModel"
+           minlength="10"
+           maxlength="10"
+    >
+    <div *ngIf="birthdateCampo.touched && birthdateCampo.errors">
+      <p *ngIf="birthdateCampo.errors.required">
+        Error: Campo requerido
+      </p>
+      <p *ngIf="birthdateCampo.errors.minlength">
+        Error: Longitud de 10 para el formato -> dd-mm-yyyy
+      </p>
+    </div>
+  </div>
+
+    <!--BOTONES-->
+  <div>
+  <button type="button" (click)="ayudaCrearUsuario()">
+      Ayuda
+    </button>
+    <button type="submit" [disabled]="!formularioUsuario.form.valid">
+      Submit
+    </button>
+    <button type="reset">
+      Reset
+    </button>
+  </div>
+
+</form>
+
+
+
