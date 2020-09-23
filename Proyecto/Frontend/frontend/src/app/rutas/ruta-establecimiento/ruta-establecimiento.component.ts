@@ -19,7 +19,12 @@ export class RutaEstablecimientoComponent implements OnInit {
 
   filtrarEstablecimientos(){
     const consultaEstablecimientos = {
-      nombre_establecimiento:{contains:this.busquedaModeloEstablecimiento}
+      or:[
+        {nombre_establecimiento:{contains:this.busquedaModeloEstablecimiento}},
+        {categoria_establecimiento:{contains:this.busquedaModeloEstablecimiento}},
+        {telefono_establecimiento:{contains:this.busquedaModeloEstablecimiento}},
+        {direccion_establecimiento:{contains:this.busquedaModeloEstablecimiento}},
+      ]
     }
 
     const consultaEstablecimientosString = 'where=' + JSON.stringify(consultaEstablecimientos)
