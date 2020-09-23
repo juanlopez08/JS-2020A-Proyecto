@@ -34,6 +34,8 @@ import { RutaEditarArticuloComponent } from './rutas/ruta-editar-articulo/ruta-e
 import {ArticuloService} from "./servicios/http/articulo.service";
 import { FormularioArticuloComponent } from './componentes/formularios/formulario-articulo/formulario-articulo.component';
 import {AuthService} from "./servicios/auth/auth.service";
+import {EstaLogeadoGuard} from "./servicios/guards/esta-logeado.guard";
+import {EsAdminGuard} from "./servicios/guards/es-admin.guard";
 
 @NgModule({
   declarations: [
@@ -75,6 +77,8 @@ import {AuthService} from "./servicios/auth/auth.service";
     UsuarioService,
     ArticuloService,
     AuthService,
+    EstaLogeadoGuard,
+    EsAdminGuard,
   ],
   bootstrap: [AppComponent]
 })

@@ -43,7 +43,8 @@ export class RutaInicioComponent implements OnInit {
       );
   }
 
-
+  // para mostrar los que estan activos
+  // http://localhost:1337/cupon?estado_cupon=activo
 
   ngOnInit(): void {
     const observableTraerTodos=this._cuponService.traerTodos();

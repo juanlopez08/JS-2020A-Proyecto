@@ -5,6 +5,10 @@ import {HttpClient} from '@angular/common/http';
 export class AuthService {
   estaAutenticado = false;
   url = 'http://localhost:1337';
+  roles = [
+    'admin',
+    'usuario'
+  ];
 
   constructor(
     private readonly _httpClient: HttpClient

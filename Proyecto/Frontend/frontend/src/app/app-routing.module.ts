@@ -19,93 +19,152 @@ import {RutaEditarUsuarioComponent} from "./rutas/ruta-editar-usuario/ruta-edita
 import {RutaArticuloComponent} from "./rutas/ruta-articulo/ruta-articulo.component";
 import {RutaCrearArticuloComponent} from "./rutas/ruta-crear-articulo/ruta-crear-articulo.component";
 import {RutaEditarArticuloComponent} from "./rutas/ruta-editar-articulo/ruta-editar-articulo.component";
+import {EstaLogeadoGuard} from "./servicios/guards/esta-logeado.guard";
+import {EsAdminGuard} from "./servicios/guards/es-admin.guard";
 
 const routes: Routes = [
   // CUPONES
   {
     component:RutaInicioComponent,
     path:'inicio',
+    canActivate : [
+      EstaLogeadoGuard
+    ]
   },
   {
     path:'listaCupon',
-    component:RutaListaCuponComponent
+    component:RutaListaCuponComponent,
+    canActivate : [
+      EstaLogeadoGuard
+    ]
   },
   {
     path:'detalleCupon/:id',
     component:RutaDetalleCuponComponent,
+    canActivate : [
+      EstaLogeadoGuard
+    ]
   },
   {
     path:'crearCupon',
-    component:RutaCrearCuponComponent
+    component:RutaCrearCuponComponent,
+    canActivate : [
+      EstaLogeadoGuard,
+      EsAdminGuard
+    ]
   },
   {
     path:'editarCupon/:id',
-    component:RutaEditarCuponComponent
+    component:RutaEditarCuponComponent,
+    canActivate : [
+      EstaLogeadoGuard,
+      EsAdminGuard
+    ]
   },
   {
     component:RutaCuponesGuardadosComponent,
-    path:'cuponesGuardados'
+    path:'cuponesGuardados',
+    canActivate : [
+      EstaLogeadoGuard
+    ]
   },
 
   // ESTABLECIMIENTOS
   {
     component: RutaEstablecimientoComponent,
     path: 'establecimiento',
+    canActivate : [
+      EstaLogeadoGuard
+    ]
   },
   {
     component:RutaDetalleEstablecimientoComponent,
-    path:'detalleEstablecimiento'
+    path:'detalleEstablecimiento',
+    canActivate : [
+      EstaLogeadoGuard
+    ]
   },
   {
     component: RutaCrearEstablecimientoComponent,
-    path:'crearEstablecimiento'
+    path:'crearEstablecimiento',
+    canActivate : [
+      EstaLogeadoGuard,
+      EsAdminGuard
+    ]
   },
   {
     component:RutaEditarEstablecimientoComponent,
-    path:'editarEstablecimiento/:id'
+    path:'editarEstablecimiento/:id',
+    canActivate : [
+      EstaLogeadoGuard,
+      EsAdminGuard
+    ]
   },
   // ARTICULOS
   {
     component:RutaArticuloComponent,
-    path:'articulo'
+    path:'articulo',
+    canActivate : [
+      EstaLogeadoGuard
+    ]
   },
   {
     component:RutaCrearArticuloComponent,
-    path:'crearArticulo'
+    path:'crearArticulo',
+    canActivate : [
+      EstaLogeadoGuard,
+      EsAdminGuard
+    ]
   },
   {
     component:RutaEditarArticuloComponent,
-    path:'editarArticulo/:id'
+    path:'editarArticulo/:id',
+    canActivate : [
+      EstaLogeadoGuard,
+      EsAdminGuard
+    ]
   },
   // USUARIOS
   {
     component:RutaUsuarioComponent,
-    path:'usuarios'
+    path:'usuarios',
+    canActivate : [
+      EstaLogeadoGuard
+    ]
   },
   {
     component:RutaCrearUsuarioComponent,
-    path:'crearUsuario'
+    path:'crearUsuario',
+    canActivate : [
+      EstaLogeadoGuard
+    ]
   },
   {
     component:RutaEditarUsuarioComponent,
-    path:'editarUsuario/:id'
+    path:'editarUsuario/:id',
+    canActivate : [
+      EstaLogeadoGuard
+    ]
   },
   {
     component:RutaLoginComponent,
-    path:'login'
+    path:'login',
   },
   {
     component:RutaRegistroComponent,
-    path:'registro'
+    path:'registro',
   },
   {
     component:RutaPerfilComponent,
-    path:'perfil'
+    path:'perfil',
+    canActivate : [
+      EstaLogeadoGuard
+    ]
   },
 
   {
     path:'',
-    redirectTo:'/inicio',
+    redirectTo:'/login',
     pathMatch:'full'
   }
 
