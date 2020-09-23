@@ -10,11 +10,31 @@ import {Router} from "@angular/router";
 export class RutaEstablecimientoComponent implements OnInit {
 
   arregloEstablecimiento = [];
+  busquedaModeloEstablecimiento = ''
 
   constructor(
     private readonly _establecimientoService:EstablecimientoService,
     private readonly _router:Router
   ) { }
+
+  filtrarEstablecimientos(){
+    const consultaEstablecimientos = {
+      nombre_establecimiento:{contains:this.busquedaModeloEstablecimiento}
+    }
+
+    const consultaEstablecimientosString = 'where=' + JSON.stringify(consultaEstablecimientos)
+
+    const observableTraerTodosEstablecimientos=this._establecimientoService
+      .traerTodosEstablecimientos(this.busquedaModeloEstablecimiento != '' ? consultaEstablecimientosString : '');
+    observableTraerTodosEstablecimientos.subscribe(
+      (establecimientos:any[])=>{
+        this.arregloEstablecimiento = establecimientos;
+      },
+      (error)=>{
+        console.error('Error', error);
+      }
+    )
+  }
 
   irAEditarEstablecimiento(id:number){
     const ruta = ['/editarEstablecimiento', id]
@@ -39,15 +59,7 @@ export class RutaEstablecimientoComponent implements OnInit {
 
 
   ngOnInit(): void {
-    const observableTraerTodosEstablecimientos=this._establecimientoService.traerTodosEstablecimientos();
-    observableTraerTodosEstablecimientos.subscribe(
-      (establecimientos:any[])=>{
-        this.arregloEstablecimiento = establecimientos;
-      },
-      (error)=>{
-        console.error('Error', error);
-      }
-    )
+
   }
 
 }

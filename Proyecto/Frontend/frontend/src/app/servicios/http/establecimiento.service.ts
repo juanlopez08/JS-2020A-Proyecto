@@ -10,8 +10,8 @@ export class EstablecimientoService {
   ) {
   }
 
-  traerTodosEstablecimientos(){
-    return this._httpClient.get(this.url + '/establecimiento')
+  traerTodosEstablecimientos(consulta?:string){
+    return this._httpClient.get(this.url + '/establecimiento?' + consulta)
   }
 
   //POST / Establecimiento

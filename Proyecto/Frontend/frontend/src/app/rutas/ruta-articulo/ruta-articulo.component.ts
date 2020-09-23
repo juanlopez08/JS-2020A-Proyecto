@@ -18,7 +18,9 @@ export class RutaArticuloComponent implements OnInit {
   ) { }
 
   filtrarArreglo(){
-    const consulta = {nombre_articulo:{contains:this.busquedaModeloArticulo}};
+    const consulta = {
+      nombre_articulo:{contains:this.busquedaModeloArticulo}
+    };
 
     const consultaString = 'where=' + JSON.stringify(consulta)
 
