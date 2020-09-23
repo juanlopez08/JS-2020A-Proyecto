@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {UsuarioService} from "../../../servicios/http/usuario.service";
 import {Router} from "@angular/router";
 
@@ -8,6 +8,28 @@ import {Router} from "@angular/router";
   styleUrls: ['./formulario-usuario.component.css']
 })
 export class FormularioUsuarioComponent implements OnInit {
+
+  @Input()
+  cedulaUsuarioInput: string;
+
+  @Input()
+  nombreUsuarioInput: string;
+
+  @Input()
+  apellidoUsuarioInput: string;
+
+  @Input()
+  correoUsuarioInput: string;
+
+  @Input()
+  passwordUsuarioInput: string;
+
+  @Input()
+  birthdateUsuarioInput: string;
+
+  @Output()
+  informacionUsuarioValidada: EventEmitter<any> = new EventEmitter<any>()
+
 
   constructor(
     private readonly _usuarioService:UsuarioService,
@@ -22,30 +44,39 @@ export class FormularioUsuarioComponent implements OnInit {
   birthdateUsuario: string;
 
   ngOnInit(): void {
+    if( this.cedulaUsuarioInput &&
+      this.nombreUsuarioInput &&
+      this.apellidoUsuarioInput &&
+      this.correoUsuarioInput &&
+      this.passwordUsuarioInput &&
+      this.birthdateUsuarioInput
+    ){
+      this.cedulaUsuario=this.cedulaUsuarioInput;
+      this.nombreUsuario=this.nombreUsuarioInput;
+      this.apellidoUsuario=this.apellidoUsuarioInput;
+      this.correoUsuario=this.correoUsuarioInput;
+      this.passwordUsuario=this.passwordUsuarioInput;
+      this.birthdateUsuario=this.birthdateUsuarioInput;
+    }
   }
 
 
   crearUsuario(formulario){
     console.log(formulario);
-    const usuarioNuevo = {
-      cedula: this.cedulaUsuario,
-      nombre_usuario: this.nombreUsuario,
-      apellido_usuario: this.apellidoUsuario,
-      correo_usuario: this.correoUsuario,
-      password_usuario: this.passwordUsuario,
-      birthdate_usuario: this.birthdateUsuario,
-    };
-    const obsCrearUsuario = this._usuarioService.crearUsuario(usuarioNuevo);
-    obsCrearUsuario
-      .subscribe(
-        (datos:Object) => {
-          alert('Nuevo usuario creado');
-          console.log('Nuevo Usuario', datos);
-        },
-        (error) => {
-          console.error('Error', error);
-        }
-      )
+    const cedula = this.cedulaUsuario
+    const esNumero = !Number.isNaN(Number(cedula))
+    if(esNumero){
+      this.informacionUsuarioValidada.emit({
+        cedula: this.cedulaUsuario,
+        nombre_usuario: this.nombreUsuario,
+        apellido_usuario: this.apellidoUsuario,
+        correo_usuario: this.correoUsuario,
+        password_usuario: this.passwordUsuario,
+        birthdate_usuario: this.birthdateUsuario,
+      })
+    }else{
+      console.error('NO ES UN NUMERO')
+    }
   }
 
 

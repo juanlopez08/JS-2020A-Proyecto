@@ -19,6 +19,10 @@ export class UsuarioService {
     return this._httpClient.post(this.url + '/usuario', usuario)
   }
 
+  editarUsuario(usuario, id){
+    return this._httpClient.put(this.url + '/usuario/' + id , usuario)
+  }
+
   //GET / usuario
   obtenerUnUsuarioPorId(idUsuario:number){
     return this._httpClient.get(this.url + '/usuario/' + idUsuario)

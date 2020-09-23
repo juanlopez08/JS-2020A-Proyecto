@@ -1,10 +1,21 @@
 
-<p>{{usuario?.id}}</p>
-<p>{{usuario?.cedula}}</p>
-<p>{{usuario?.nombre_usuario}}</p>
-<p>{{usuario?.apellido_usuario}}</p>
-<p>{{usuario?.correo_usuario}}</p>
-<p>{{usuario?.password_usuario}}</p>
-<p>{{usuario?.birthdate_usuario}}</p>
+<!--<p>{{usuario?.id}}</p>-->
+<!--<p>{{usuario?.cedula}}</p>-->
+<!--<p>{{usuario?.nombre_usuario}}</p>-->
+<!--<p>{{usuario?.apellido_usuario}}</p>-->
+<!--<p>{{usuario?.correo_usuario}}</p>-->
+<!--<p>{{usuario?.password_usuario}}</p>-->
+<!--<p>{{usuario?.birthdate_usuario}}</p>-->
 
-
+<div *ngIf="mostrarFormulario">
+<app-formulario-usuario
+[cedulaUsuarioInput]="usuario.cedula"
+[nombreUsuarioInput]="usuario.nombre_usuario"
+[apellidoUsuarioInput]="usuario.apellido_usuario"
+[correoUsuarioInput]="usuario.correo_usuario"
+[passwordUsuarioInput]="usuario.password_usuario"
+[birthdateUsuarioInput]="usuario.birthdate_usuario"
+(informacionUsuarioValidada)="editarUsuario($event)"
+>
+</app-formulario-usuario>
+</div>
