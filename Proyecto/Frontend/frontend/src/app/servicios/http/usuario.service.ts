@@ -10,8 +10,8 @@ export class UsuarioService {
   ) {
   }
 
-  traerTodosUsuarios(){
-    return this._httpClient.get(this.url + '/usuario')
+  traerTodosUsuarios(consulta?:string){
+    return this._httpClient.get(this.url + '/usuario?' + consulta)
   }
 
   //POST / usuario

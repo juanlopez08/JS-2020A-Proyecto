@@ -64,7 +64,7 @@ export class RutaEstablecimientoComponent implements OnInit {
 
 
   ngOnInit(): void {
-
+    this.filtrarEstablecimientos()
   }
 
 }

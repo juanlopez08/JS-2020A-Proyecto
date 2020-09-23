@@ -2,6 +2,11 @@
 <button [routerLink]="['/crearUsuario']" >Crear Usuario</button>
 
 <router-outlet></router-outlet>
+<br>
+<label for="busquedaId"></label>
+<input id="busquedaId" name="busqueda" type="text" [(ngModel)]="busquedaModeloUsuarios">
+<button (click)="filtrarUsuarios()">Buscar por nombre</button>
+
 
 <table>
   <tr>

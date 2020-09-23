@@ -57,7 +57,7 @@ export class RutaArticuloComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.filtrarArreglo()
   }
 
 }
