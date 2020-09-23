@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {EstablecimientoService} from "../../../servicios/http/establecimiento.service";
 import {Route, Router} from "@angular/router";
 
@@ -8,6 +8,21 @@ import {Route, Router} from "@angular/router";
   styleUrls: ['./formulario-establecimiento.component.css']
 })
 export class FormularioEstablecimientoComponent implements OnInit {
+
+  @Input()
+  nombreEstablecimientoInput:string;
+
+  @Input()
+  categoriaEstablecimientoInput:string;
+
+  @Input()
+  telefonoEstablecimientoInput:string;
+
+  @Input()
+  direccionEstablecimientoInput:string;
+
+  @Output()
+  informacionEstablecimientoValidad: EventEmitter<any> = new EventEmitter<any>()
 
   constructor(
     private readonly _establecimientoService:EstablecimientoService,
@@ -20,6 +35,17 @@ export class FormularioEstablecimientoComponent implements OnInit {
   direccionEstablecimiento:string;
 
   ngOnInit(): void {
+    if(this.nombreEstablecimientoInput &&
+      this.categoriaEstablecimientoInput &&
+      this.telefonoEstablecimientoInput &&
+      this.direccionEstablecimientoInput
+    ){
+      this.nombreEstablecimiento=this.nombreEstablecimientoInput;
+      this.categoriaEstablecimiento=this.categoriaEstablecimientoInput;
+      this.telefonoEstablecimiento=this.telefonoEstablecimientoInput;
+      this.direccionEstablecimiento=this.direccionEstablecimientoInput;
+    }
+
   }
 
 crearEstablecimiento(formulario){
@@ -27,23 +53,12 @@ crearEstablecimiento(formulario){
     const telefono = this.telefonoEstablecimiento;
     const esNumero = !Number.isNaN(Number(telefono));
     if(esNumero){
-    const establecimientoNuevo={
-        nombre_establecimiento: this.nombreEstablecimiento,
-        categoria_establecimiento: this.categoriaEstablecimiento,
-        telefono_establecimiento: this.telefonoEstablecimiento,
-        direccion_establecimiento: this.direccionEstablecimiento
-      };
-      const obsCrearEstablecimiento = this._establecimientoService.crearEstablecimiento(establecimientoNuevo);
-      obsCrearEstablecimiento
-        .subscribe(
-          (datos:Object)=>{
-            alert('Nuevo establecimiento creado');
-            console.log('Nuevo Establecimiento', datos);
-          },
-          (error)=>{
-            console.error('Error', error);
-          }
-          )
+    this.informacionEstablecimientoValidad.emit({
+      nombre_establecimiento: this.nombreEstablecimiento,
+      categoria_establecimiento: this.categoriaEstablecimiento,
+      telefono_establecimiento: this.telefonoEstablecimiento,
+      direccion_establecimiento: this.direccionEstablecimiento
+    })
     }else{
       console.error('NO ES UN NUMERO')
       alert('El telefono debe tener solo numeros')
