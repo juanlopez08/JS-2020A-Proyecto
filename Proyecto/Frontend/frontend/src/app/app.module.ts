@@ -33,6 +33,7 @@ import { RutaCrearArticuloComponent } from './rutas/ruta-crear-articulo/ruta-cre
 import { RutaEditarArticuloComponent } from './rutas/ruta-editar-articulo/ruta-editar-articulo.component';
 import {ArticuloService} from "./servicios/http/articulo.service";
 import { FormularioArticuloComponent } from './componentes/formularios/formulario-articulo/formulario-articulo.component';
+import {AuthService} from "./servicios/auth/auth.service";
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { FormularioArticuloComponent } from './componentes/formularios/formulari
     EstablecimientoService,
     UsuarioService,
     ArticuloService,
+    AuthService,
   ],
   bootstrap: [AppComponent]
 })

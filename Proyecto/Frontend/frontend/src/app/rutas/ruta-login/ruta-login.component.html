@@ -1,1 +1,36 @@
-<p>ruta-login works!</p>
+<div class="container">
+  <div class="father uno">  <img src="https://img.freepik.com/vector-gratis/logo-entrada_9850-384.jpg?size=626&ext=jpg" alt="" width="400" height="400"></div>
+  <div class="father dos">
+
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+
+
+{{_authService.estaAutenticado}}
+
+<form #formularioLogin="ngForm"
+      (ngSubmit)="revisarLogin(formularioLogin)"
+>
+<!--  <label for="correoId" class="fadeIn second" >Correo: </label>-->
+  <input class="fadeIn second" placeholder="Email"
+    id="correoId" name="correo" [(ngModel)]="correoModelo" type="text">
+
+<!--  <label for="cedulaId" class="fadeIn third">Cedula: </label>-->
+  <input class="fadeIn third"  placeholder="Contraseña"
+    id="cedulaId" name="correo" [(ngModel)]="passwordModelo" type="text">
+
+  <button class="fadeIn fourth">
+    Logearse
+  </button>
+
+</form>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
