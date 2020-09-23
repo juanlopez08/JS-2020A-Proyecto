@@ -3,6 +3,10 @@
 <button [routerLink]="['/crearArticulo']" >Crear Articulo</button>
 
 <router-outlet></router-outlet>
+<br>
+<label for="busquedaId"></label>
+<input id="busquedaId" name="busqeuda" type="text" [(ngModel)]="busquedaModeloArticulo">
+<button (click)="filtrarArreglo()">Buscar por nombre</button>
 
 <table>
   <tr>

@@ -11,8 +11,8 @@ export class ArticuloService {
   ) {
   }
 
-  traerTodosArticulos(){
-    return this._httpClient.get(this.url + '/articulo')
+  traerTodosArticulos(consulta?:string){
+    return this._httpClient.get(this.url + '/articulo?' + consulta)
   }
 
   //POST / articulo
