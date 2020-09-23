@@ -1,1 +1,12 @@
 <p>ruta-editar-articulo works!</p>
+
+<div *ngIf="mostrarFormularioArticulo">
+  <app-formulario-articulo
+    [nombreArticuloInput]="articulo.nombre_articulo"
+    [precioArticuloInput]="articulo.precio_articulo"
+    (informacionArticuloValidada)="editarArticulo($event)"
+  >
+  </app-formulario-articulo>
+</div>
+
+

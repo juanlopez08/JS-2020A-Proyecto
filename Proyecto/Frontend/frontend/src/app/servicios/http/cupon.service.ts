@@ -20,6 +20,10 @@ export class CuponService {
     return this._httpClient.post(this.url + '/cupon', cupon)
   }
 
+  editarCupon(cupon, id){
+    return this._httpClient.put(this.url + '/cupon/' + id, cupon)
+  }
+
   //GET / Cupon
   obtenerUnCuponPorId(idCupon:number){
     return this._httpClient.get(this.url + '/cupon/' + idCupon)

@@ -20,6 +20,12 @@ export class ArticuloService {
     return this._httpClient.post(this.url + '/articulo', articulo)
   }
 
+  //POST / articulo
+  editarArticulo(articulo, id){
+    return this._httpClient.put(this.url + '/articulo/' + id, articulo)
+  }
+
+
   //GET / Cupon
   obtenerUnArticuloPorId(idArticulo:number){
     return this._httpClient.get(this.url + '/articulo/' + idArticulo)

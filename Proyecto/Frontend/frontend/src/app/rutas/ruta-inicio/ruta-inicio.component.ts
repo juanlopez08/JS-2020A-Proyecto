@@ -43,6 +43,8 @@ export class RutaInicioComponent implements OnInit {
       );
   }
 
+
+
   ngOnInit(): void {
     const observableTraerTodos=this._cuponService.traerTodos();
     observableTraerTodos.subscribe(
