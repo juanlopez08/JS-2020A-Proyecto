@@ -10,12 +10,13 @@
 <!--</div>-->
 
 <ul>
+  <div *ngIf="_authService.estaAutenticado">
   <li>
     <a [routerLink]="['login']" >
       Login
     </a>
   </li>
-  <li>
+  <li >
     <a [routerLink]="['inicio']" >
       Ir Inicio --- HOME --- Lista de Cupones
     </a>
@@ -36,6 +37,7 @@
       Articulo
     </a>
   </li>
+  </div>
 </ul>
 
 

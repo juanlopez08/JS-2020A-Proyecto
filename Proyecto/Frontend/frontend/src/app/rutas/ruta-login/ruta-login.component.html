@@ -6,7 +6,7 @@
       <div id="formContent">
 
 
-{{_authService.estaAutenticado}}
+<!--{{_authService.estaAutenticado}}-->
 
 <form #formularioLogin="ngForm"
       (ngSubmit)="revisarLogin(formularioLogin)"
@@ -19,8 +19,12 @@
   <input class="fadeIn third"  placeholder="Contraseña"
     id="cedulaId" name="correo" [(ngModel)]="passwordModelo" type="text">
 
-  <button class="fadeIn fourth">
+  <button class="fadeIn fourth" >
     Logearse
+  </button>
+
+  <button class="fadeIn fourth" [routerLink]="['/registro']">
+    Registrarse
   </button>
 
 </form>
@@ -32,5 +36,6 @@
 </div>
 
 
+<router-outlet></router-outlet>
 
 

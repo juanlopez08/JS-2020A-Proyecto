@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../servicios/auth/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-ruta-login',
@@ -11,8 +12,10 @@ export class RutaLoginComponent implements OnInit {
   correoModelo: string;
   passwordModelo: string;
 
-  constructor(public readonly _authService: AuthService) {
-  }
+  constructor(
+    public readonly _authService: AuthService,
+    private readonly _router:Router
+  ) {}
 
   ngOnInit(): void {
   }
@@ -23,9 +26,8 @@ export class RutaLoginComponent implements OnInit {
       .subscribe(
         (arregloUsuarios: any[]) => {
           if( arregloUsuarios.length > 0){
-
             this._authService.estaAutenticado = true;
-
+            this.irAInicio()
           }else{
             this._authService.estaAutenticado =false;
           }
@@ -35,7 +37,11 @@ export class RutaLoginComponent implements OnInit {
           console.error(error)
         }
       )
-
-
   }
+
+  irAInicio(){
+    const url = ['inicio']
+    this._router.navigate(url)
+  }
+
 }
