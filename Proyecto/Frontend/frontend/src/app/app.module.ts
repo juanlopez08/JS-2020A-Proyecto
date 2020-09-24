@@ -36,6 +36,7 @@ import { FormularioArticuloComponent } from './componentes/formularios/formulari
 import {AuthService} from "./servicios/auth/auth.service";
 import {EstaLogeadoGuard} from "./servicios/guards/esta-logeado.guard";
 import {EsAdminGuard} from "./servicios/guards/es-admin.guard";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import {EsAdminGuard} from "./servicios/guards/es-admin.guard";
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    NgbModule,
   ],
   providers: [
     CuponService,
