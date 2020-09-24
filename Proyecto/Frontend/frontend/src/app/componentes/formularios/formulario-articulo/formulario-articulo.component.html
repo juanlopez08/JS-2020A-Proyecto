@@ -1,14 +1,24 @@
+<div class="container">
+  <div class="father uno">  <img src="https://img.freepik.com/vector-gratis/logo-entrada_9850-384.jpg?size=626&ext=jpg" alt="" width="400" height="400"></div>
+  <div class="father dos">
 
-<form #formularioArticulo="ngForm"
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+
+
+<!--AQUI-->
+      <form #formularioArticulo="ngForm"
       (ngSubmit)="crearArticulo(formularioArticulo)">
   <div>
-    <label for="nombre_articulo">Nombre: </label>
+<!--    <label for="nombre_articulo">Nombre: </label>-->
     <input id="nombre_articulo"
            type="text" name="nombre_articulo"
            [(ngModel)]="nombreArticulo"
            required
            #nombreArticuloCampo="ngModel"
            minlength="3"
+           class="fadeIn second"
+           placeholder="Nombre"
     >
     <div *ngIf="nombreArticuloCampo.touched && nombreArticuloCampo.errors">
       <p *ngIf="nombreArticuloCampo.errors.required">
@@ -20,15 +30,16 @@
     </div>
   </div>
   <div>
-    <label for="precio_articulo">Precio: </label>
+<!--    <label for="precio_articulo">Precio: </label>-->
     <input id="precio_articulo"
-           placeholder="0.00"
            type="number"  step="0.01" min="0"
            name="precio_articulo"
            [(ngModel)]="precioArticulo"
            required
            #precioArticuloCampo="ngModel"
            minlength="3"
+           class="fadeIn third"
+           placeholder="Precio 0.00"
     >
     <div *ngIf="precioArticuloCampo.touched && precioArticuloCampo.errors">
       <p *ngIf="precioArticuloCampo.errors.required">
@@ -51,5 +62,11 @@
 
 </form>
 
+<!--AQUI-->
 
+      </div>
+    </div>
+  </div>
+
+</div>
 

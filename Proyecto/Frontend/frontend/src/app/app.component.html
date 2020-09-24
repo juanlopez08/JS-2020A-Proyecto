@@ -9,38 +9,37 @@
 <!--</app-carta-cupon>-->
 <!--</div>-->
 
+
+
 <ul>
   <div *ngIf="_authService.estaAutenticado">
-  <li>
-    <a [routerLink]="['login']" >
-      Login
-    </a>
-  </li>
-  <li >
-    <a [routerLink]="['inicio']" >
-      Ir Inicio --- HOME --- Lista de Cupones
-    </a>
-  </li>
+    <li>
+      <a [routerLink]="['login']" >
+        Login
+      </a>
+    </li>
+    <li >
+      <a [routerLink]="['inicio']" >
+        Ir Inicio --- HOME --- Lista de Cupones
+      </a>
+    </li>
 
-  <li>
-    <a [routerLink]="['establecimiento']" >
-      Establecimiento
-    </a>
-  </li>
-  <li>
-    <a [routerLink]="['usuarios']" >
-      Usuario
-    </a>
-  </li>
-  <li>
-    <a [routerLink]="['articulo']" >
-      Articulo
-    </a>
-  </li>
+    <li>
+      <a [routerLink]="['establecimiento']" >
+        Establecimiento
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['usuarios']" >
+        Usuario
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['articulo']" >
+        Articulo
+      </a>
+    </li>
   </div>
 </ul>
-
-
-
 
 <router-outlet> </router-outlet>
