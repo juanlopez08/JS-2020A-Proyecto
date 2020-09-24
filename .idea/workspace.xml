@@ -22,6 +22,7 @@
     <list default="true" id="e210fac3-3547-467e-80c6-9e6e7289a73d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-articulo/ruta-articulo.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-articulo/ruta-articulo.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-establecimiento/ruta-establecimiento.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-establecimiento/ruta-establecimiento.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-inicio/ruta-inicio.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-inicio/ruta-inicio.component.html" afterDir="false" />
@@ -81,7 +82,7 @@
       <workItem from="1600319714915" duration="1373000" />
       <workItem from="1600359923545" duration="23108000" />
       <workItem from="1600793613777" duration="889000" />
-      <workItem from="1600819190432" duration="54229000" />
+      <workItem from="1600819190432" duration="54577000" />
     </task>
     <servers />
   </component>

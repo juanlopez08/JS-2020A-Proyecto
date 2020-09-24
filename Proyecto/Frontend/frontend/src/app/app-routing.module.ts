@@ -28,28 +28,28 @@ const routes: Routes = [
     component:RutaInicioComponent,
     path:'inicio',
     canActivate : [
-      // EstaLogeadoGuard
+       EstaLogeadoGuard
     ]
   },
   {
     path:'listaCupon',
     component:RutaListaCuponComponent,
     canActivate : [
-      // EstaLogeadoGuard
+       EstaLogeadoGuard
     ]
   },
   {
     path:'detalleCupon/:id',
     component:RutaDetalleCuponComponent,
     canActivate : [
-      // EstaLogeadoGuard
+       EstaLogeadoGuard
     ]
   },
   {
     path:'crearCupon',
     component:RutaCrearCuponComponent,
     canActivate : [
-      // EstaLogeadoGuard,
+       EstaLogeadoGuard,
       EsAdminGuard
     ]
   },
@@ -57,7 +57,7 @@ const routes: Routes = [
     path:'editarCupon/:id',
     component:RutaEditarCuponComponent,
     canActivate : [
-      // EstaLogeadoGuard,
+      EstaLogeadoGuard,
       EsAdminGuard
     ]
   },
@@ -65,7 +65,7 @@ const routes: Routes = [
     component:RutaCuponesGuardadosComponent,
     path:'cuponesGuardados',
     canActivate : [
-      // EstaLogeadoGuard
+       EstaLogeadoGuard
     ]
   },
 
@@ -74,21 +74,21 @@ const routes: Routes = [
     component: RutaEstablecimientoComponent,
     path: 'establecimiento',
     canActivate : [
-      // EstaLogeadoGuard
+       EstaLogeadoGuard
     ]
   },
   {
     component:RutaDetalleEstablecimientoComponent,
     path:'detalleEstablecimiento',
     canActivate : [
-      // EstaLogeadoGuard
+       EstaLogeadoGuard
     ]
   },
   {
     component: RutaCrearEstablecimientoComponent,
     path:'crearEstablecimiento',
     canActivate : [
-      // EstaLogeadoGuard,
+       EstaLogeadoGuard,
       EsAdminGuard
     ]
   },
@@ -96,7 +96,7 @@ const routes: Routes = [
     component:RutaEditarEstablecimientoComponent,
     path:'editarEstablecimiento/:id',
     canActivate : [
-      // EstaLogeadoGuard,
+       EstaLogeadoGuard,
       EsAdminGuard
     ]
   },
@@ -105,14 +105,14 @@ const routes: Routes = [
     component:RutaArticuloComponent,
     path:'articulo',
     canActivate : [
-      // EstaLogeadoGuard
+       EstaLogeadoGuard
     ]
   },
   {
     component:RutaCrearArticuloComponent,
     path:'crearArticulo',
     canActivate : [
-      // EstaLogeadoGuard,
+       EstaLogeadoGuard,
       EsAdminGuard
     ]
   },
@@ -120,7 +120,7 @@ const routes: Routes = [
     component:RutaEditarArticuloComponent,
     path:'editarArticulo/:id',
     canActivate : [
-      // EstaLogeadoGuard,
+       EstaLogeadoGuard,
       EsAdminGuard
     ]
   },
@@ -129,21 +129,21 @@ const routes: Routes = [
     component:RutaUsuarioComponent,
     path:'usuarios',
     canActivate : [
-      // EstaLogeadoGuard
+       EstaLogeadoGuard
     ]
   },
   {
     component:RutaCrearUsuarioComponent,
     path:'crearUsuario',
     canActivate : [
-      // EstaLogeadoGuard
+       EstaLogeadoGuard
     ]
   },
   {
     component:RutaEditarUsuarioComponent,
     path:'editarUsuario/:id',
     canActivate : [
-      // EstaLogeadoGuard
+       EstaLogeadoGuard
     ]
   },
   {
@@ -158,7 +158,7 @@ const routes: Routes = [
     component:RutaPerfilComponent,
     path:'perfil',
     canActivate : [
-      // EstaLogeadoGuard
+       EstaLogeadoGuard
     ]
   },
 
