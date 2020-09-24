@@ -30,6 +30,7 @@ export class RutaLoginComponent implements OnInit {
             this.irAInicio()
           }else{
             this._authService.estaAutenticado =false;
+            alert('Credenciales incorrectas');
           }
 
         },
