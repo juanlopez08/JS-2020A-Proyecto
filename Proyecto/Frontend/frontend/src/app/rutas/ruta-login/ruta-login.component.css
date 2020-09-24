@@ -6,7 +6,7 @@ body {
 
 .container{
   display: flex;
-  height: 650px;
+  height: 450px;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
@@ -16,7 +16,7 @@ body {
 .father{
   display: flex;
   background: white;
-  height: 650px;
+  height: 450px;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
