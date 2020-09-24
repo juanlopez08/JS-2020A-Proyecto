@@ -29,6 +29,7 @@ export class RutaRegistroComponent implements OnInit {
         },
         (error) => {
           console.error('Error', error);
+          alert('Ingrese un correo valido')
         }
       )
   }
