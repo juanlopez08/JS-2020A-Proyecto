@@ -37,6 +37,8 @@ import {AuthService} from "./servicios/auth/auth.service";
 import {EstaLogeadoGuard} from "./servicios/guards/esta-logeado.guard";
 import {EsAdminGuard} from "./servicios/guards/es-admin.guard";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {RolesService} from "./servicios/http/roles.service";
+import {ArticuloEnCuponService} from "./servicios/http/articulo-en-cupon.service";
 
 @NgModule({
   declarations: [
@@ -81,6 +83,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AuthService,
     EstaLogeadoGuard,
     EsAdminGuard,
+    RolesService,
+    ArticuloEnCuponService,
   ],
   bootstrap: [AppComponent]
 })

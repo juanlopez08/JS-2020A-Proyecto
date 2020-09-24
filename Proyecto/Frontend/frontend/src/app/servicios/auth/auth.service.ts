@@ -6,8 +6,8 @@ export class AuthService {
   estaAutenticado = false;
   url = 'http://localhost:1337';
   roles = [
-    'admin',
-    'usuario'
+    //  'admin',
+    //  'usuario'
   ];
 
   constructor(
@@ -19,6 +19,10 @@ export class AuthService {
     return this._httpClient.get(
       this.url + '/Usuario?correo_usuario=' + correo + '&password_usuario=' + password
     )
+  }
+
+  usuarioAutenticado(){
+
   }
 
 }
