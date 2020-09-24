@@ -1,36 +1,66 @@
-<h1>Establecimientos</h1>
-<h2>AVISO!!! No se pueden eliminar establecimientos que aun contengan cupones</h2>
-<button [routerLink]="['/crearEstablecimiento']" >Crear Establecimiento</button>
-
+<div class=" mb-2 ml-2">
+  <h1>Establecimientos</h1>
+  <h6>AVISO!!! No se pueden eliminar establecimientos que aun contengan cupones</h6>
+  <button [routerLink]="['/crearEstablecimiento']" type="button" class="btn btn-primary">Crear Establecimiento</button>
+</div>
 <router-outlet></router-outlet>
-<br>
-<label for="busquedaId"></label>
-<input id="busquedaId" name="busqueda" type="text" [(ngModel)]="busquedaModeloEstablecimiento">
-<button (click)="filtrarEstablecimientos()">Buscar por nombre</button>
+
+<div class="input-group mb-4 ml-2">
+  <button (click)="filtrarEstablecimientos()" type="button" class="btn btn-primary">Buscar</button>
+  <label for="busquedaId"></label>
+  <input id="busquedaId" name="busqueda" type="text" [(ngModel)]="busquedaModeloEstablecimiento" class="form-control">
+</div>
 
 
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Nombre</th>
-    <th>Categoria</th>
-    <th>Telefono</th>
-    <th>Direccion</th>
-  </tr>
-  <tr *ngFor="let establecimiento of arregloEstablecimiento">
-    <td>{{establecimiento.id}}</td>
-    <td>{{establecimiento.nombre_establecimiento}}</td>
-    <td>{{establecimiento.categoria_establecimiento}}</td>
-    <td>{{establecimiento.telefono_establecimiento}}</td>
-    <td>{{establecimiento.direccion_establecimiento}}</td>
 
-    <td>
-      <button (click)="irAEditarEstablecimiento(establecimiento.id)">
-        Editar
-      </button>
-      <button (click)="eliminarEstablecimiento(establecimiento.id)">
-        Eliminar
-      </button>
-    </td>
-  </tr>
-</table>
+<div class="row">
+  <div *ngFor="let establecimiento of arregloEstablecimiento">
+    <div class="col-md-3 ">
+      <div class="card mb-4 ml-2" style="width: 18rem;">
+        <!-- https://t3.ftcdn.net/jpg/03/56/46/10/240_F_356461066_rUflx03xPKYXEGe36Ecslg2ilEnWsAHa.jpg -->
+        <img
+          src="https://images.squarespace-cdn.com/content/5bfd258aa9e0286e15dd1d8a/1574045065549-MGGIVBVA8CAJZ6UXXP78/image-asset.jpeg?content-type=image%2Fjpeg"
+          class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{establecimiento.nombre_establecimiento}}</h5>
+          <p class="card-text">Categoria: {{establecimiento.categoria_establecimiento}}</p>
+          <p class="card-text">Telefono: {{establecimiento.telefono_establecimiento}}</p>
+          <p class="card-text">Direccion: {{establecimiento.direccion_establecimiento}}</p>
+
+          <button (click)="irAEditarEstablecimiento(establecimiento.id)" type="button" class="btn btn-primary">
+            Editar
+          </button>
+          <button (click)="eliminarEstablecimiento(establecimiento.id)" type="button" class="btn btn-primary">
+            Eliminar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--<table>-->
+<!--  <tr>-->
+<!--    <th>ID</th>-->
+<!--    <th>Nombre</th>-->
+<!--    <th>Categoria</th>-->
+<!--    <th>Telefono</th>-->
+<!--    <th>Direccion</th>-->
+<!--  </tr>-->
+<!--  <tr *ngFor="let establecimiento of arregloEstablecimiento">-->
+<!--    <td>{{establecimiento.id}}</td>-->
+<!--    <td>{{establecimiento.nombre_establecimiento}}</td>-->
+<!--    <td>{{establecimiento.categoria_establecimiento}}</td>-->
+<!--    <td>{{establecimiento.telefono_establecimiento}}</td>-->
+<!--    <td>{{establecimiento.direccion_establecimiento}}</td>-->
+<!--    <td>-->
+<!--      <button (click)="irAEditarEstablecimiento(establecimiento.id)">-->
+<!--        Editar-->
+<!--      </button>-->
+<!--      <button (click)="eliminarEstablecimiento(establecimiento.id)">-->
+<!--        Eliminar-->
+<!--      </button>-->
+<!--    </td>-->
+<!--  </tr>-->
+<!--</table>-->

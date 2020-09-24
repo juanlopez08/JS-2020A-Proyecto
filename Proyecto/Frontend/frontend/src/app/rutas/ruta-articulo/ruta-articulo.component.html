@@ -1,30 +1,57 @@
-<p>ruta-articulo works!</p>
-<h1>Articulos</h1>
-<button [routerLink]="['/crearArticulo']" >Crear Articulo</button>
+<div class=" mb-1 ml-2">
+  <h1>Articulos</h1>
+  <button [routerLink]="['/crearArticulo']" type="button" class="btn btn-primary">Crear Articulo</button>
+</div>
 
-<router-outlet></router-outlet>
-<br>
-<label for="busquedaId"></label>
-<input id="busquedaId" name="busqueda" type="text" [(ngModel)]="busquedaModeloArticulo">
-<button (click)="filtrarArreglo()">Buscar por nombre</button>
+<div class="input-group mb-4 ml-2">
+  <router-outlet></router-outlet>
+  <br>
+  <button (click)="filtrarArreglo()" type="button" class="btn btn-primary">Buscar por nombre</button>
+  <label for="busquedaId"></label>
+  <input id="busquedaId" name="busqueda" type="text" [(ngModel)]="busquedaModeloArticulo" class="form-control" >
+</div>
 
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Nombre</th>
-    <th>Precio</th>
-  </tr>
-  <tr *ngFor="let articulo of arregloArticulo">
-    <td>{{articulo.id}}</td>
-    <td>{{articulo.nombre_articulo}}</td>
-    <td>{{articulo.precio_articulo}}</td>
-    <td>
-      <button (click)="irAEditarArticulo(articulo.id)" >
-        Editar
-      </button>
-      <button (click)="eliminarArticulo(articulo.id)">
-        Eliminar
-      </button>
-    </td>
-  </tr>
-</table>
+<div class="row">
+  <div *ngFor="let articulo of arregloArticulo">
+    <div class="col-md-3 ">
+
+      <div class="card mb-4 ml-2" style="width: 14rem;">
+        <img src="https://www.shopbuilderpro.co.uk/userfiles/100354/user/New_Products_Image.png" class="card-img-top"
+             alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{articulo.nombre_articulo}}</h5>
+          <p class="card-text">$ {{articulo.precio_articulo}}</p>
+
+          <button (click)="irAEditarArticulo(articulo.id)" type="button" class="btn btn-primary">
+            Editar
+          </button>
+          <button (click)="eliminarArticulo(articulo.id)" type="button" class="btn btn-primary">
+            Eliminar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--<table>-->
+<!--  <tr>-->
+<!--    <th>ID</th>-->
+<!--    <th>Nombre</th>-->
+<!--    <th>Precio</th>-->
+<!--  </tr>-->
+<!--  <tr *ngFor="let articulo of arregloArticulo">-->
+<!--    <td>{{articulo.id}}</td>-->
+<!--    <td>{{articulo.nombre_articulo}}</td>-->
+<!--    <td>{{articulo.precio_articulo}}</td>-->
+<!--    <td>-->
+<!--      <button (click)="irAEditarArticulo(articulo.id)" >-->
+<!--        Editar-->
+<!--      </button>-->
+<!--      <button (click)="eliminarArticulo(articulo.id)">-->
+<!--        Eliminar-->
+<!--      </button>-->
+<!--    </td>-->
+<!--  </tr>-->
+<!--</table>-->
