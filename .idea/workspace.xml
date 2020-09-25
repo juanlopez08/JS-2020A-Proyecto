@@ -20,14 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e210fac3-3547-467e-80c6-9e6e7289a73d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/servicios/http/usuario-tiene-rol.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-inicio/ruta-inicio.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-inicio/ruta-inicio.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-inicio/ruta-inicio.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-inicio/ruta-inicio.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-login/ruta-login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-login/ruta-login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/servicios/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/servicios/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/servicios/guards/es-admin.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/servicios/guards/es-admin.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-lista-cupon/ruta-lista-cupon.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-lista-cupon/ruta-lista-cupon.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-lista-cupon/ruta-lista-cupon.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-lista-cupon/ruta-lista-cupon.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-registro/ruta-registro.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-registro/ruta-registro.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-registro/ruta-registro.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-registro/ruta-registro.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +83,7 @@
       <workItem from="1600793613777" duration="889000" />
       <workItem from="1600819190432" duration="57040000" />
       <workItem from="1600964637280" duration="3398000" />
-      <workItem from="1600984170566" duration="11873000" />
+      <workItem from="1600984170566" duration="15732000" />
     </task>
     <servers />
   </component>
