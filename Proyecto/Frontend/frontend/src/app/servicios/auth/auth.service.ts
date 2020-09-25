@@ -4,9 +4,11 @@ import {HttpClient} from '@angular/common/http';
 @Injectable()
 export class AuthService {
   estaAutenticado = false;
+  usuarioAutenticado;
+
   url = 'http://localhost:1337';
   roles = [
-    //  'admin',
+      'admin',
     //  'usuario'
   ];
 
@@ -21,8 +23,6 @@ export class AuthService {
     )
   }
 
-  usuarioAutenticado(){
 
-  }
 
 }

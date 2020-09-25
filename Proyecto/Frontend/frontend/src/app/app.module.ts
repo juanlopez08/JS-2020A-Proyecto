@@ -85,6 +85,7 @@ import {ArticuloEnCuponService} from "./servicios/http/articulo-en-cupon.service
     EsAdminGuard,
     RolesService,
     ArticuloEnCuponService,
+    RutaLoginComponent
   ],
   bootstrap: [AppComponent]
 })

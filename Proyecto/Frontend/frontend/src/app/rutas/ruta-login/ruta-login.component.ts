@@ -11,6 +11,7 @@ export class RutaLoginComponent implements OnInit {
 
   correoModelo: string;
   passwordModelo: string;
+  usuarioGuardado;
 
   constructor(
     public readonly _authService: AuthService,
@@ -26,7 +27,16 @@ export class RutaLoginComponent implements OnInit {
       .subscribe(
         (arregloUsuarios: any[]) => {
           if( arregloUsuarios.length > 0){
+            // console.log('Arreglo usuarios',arregloUsuarios)
+            this.usuarioGuardado = arregloUsuarios[0];
+
+            this.devolverUsuarioLogeado()
             this._authService.estaAutenticado = true;
+            // JSON.stringify(
+            this._authService.usuarioAutenticado = this.usuarioGuardado
+
+            console.log('JAJAJAJAJ',this._authService.usuarioAutenticado )
+
             this.irAInicio()
           }else{
             this._authService.estaAutenticado =false;
@@ -38,6 +48,11 @@ export class RutaLoginComponent implements OnInit {
           console.error(error)
         }
       )
+  }
+
+  devolverUsuarioLogeado(){
+    console.log('this.usuarioGuardado',this.usuarioGuardado)
+    return this.usuarioGuardado
   }
 
   irAInicio(){

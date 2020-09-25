@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {CuponService} from "../../servicios/http/cupon.service";
 import {Router} from "@angular/router";
+import {RutaLoginComponent} from "../ruta-login/ruta-login.component";
+import {AuthService} from "../../servicios/auth/auth.service";
 
 @Component({
   selector: 'app-ruta-inicio',
@@ -13,8 +15,10 @@ export class RutaInicioComponent implements OnInit {
 
   constructor(
     private readonly _cuponService:CuponService,
-    private readonly _router: Router
+    private readonly _router: Router,
+    public readonly _authService:AuthService,
   ) { }
+
 
   irAEditarCupon(id:number){
     const ruta = ['/editarCupon', id]
@@ -51,6 +55,7 @@ export class RutaInicioComponent implements OnInit {
     observableTraerTodos.subscribe(
       (cupones: any[])=>{
         this.arregloCupones = cupones;
+        console.log('AQUIAQUIAQUI',this._authService.usuarioAutenticado)
       },
       (error) => {
         console.error('Error', error);
