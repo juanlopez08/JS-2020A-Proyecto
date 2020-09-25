@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CuponService} from "./servicios/http/cupon.service";
 import {EstablecimientoService} from "./servicios/http/establecimiento.service";
 import {AuthService} from "./servicios/auth/auth.service";
+import {EsAdminGuard} from "./servicios/guards/es-admin.guard";
 
 @Component({
   selector: 'your-ticket',
@@ -21,6 +22,7 @@ export class AppComponent implements OnInit{
     private readonly _cuponService: CuponService,
     private readonly _establecimientoService: EstablecimientoService,
     public readonly _authService:AuthService,
+    public readonly _esAdminGuard:EsAdminGuard,
   ) {
 
   }

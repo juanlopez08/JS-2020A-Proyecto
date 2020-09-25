@@ -21,9 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="e210fac3-3547-467e-80c6-9e6e7289a73d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-crear-usuario/ruta-crear-usuario.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-crear-usuario/ruta-crear-usuario.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-registro/ruta-registro.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-registro/ruta-registro.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-establecimiento/ruta-establecimiento.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-establecimiento/ruta-establecimiento.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-inicio/ruta-inicio.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-inicio/ruta-inicio.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-inicio/ruta-inicio.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-inicio/ruta-inicio.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/servicios/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/servicios/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/servicios/guards/es-admin.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/servicios/guards/es-admin.guard.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +85,7 @@
       <workItem from="1600793613777" duration="889000" />
       <workItem from="1600819190432" duration="57040000" />
       <workItem from="1600964637280" duration="3398000" />
-      <workItem from="1600984170566" duration="16382000" />
+      <workItem from="1600984170566" duration="19932000" />
     </task>
     <servers />
   </component>
@@ -145,10 +149,10 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="430" y="137" width="563" height="519" key="refactoring.ChangeSignatureDialog/67.27.1299.741@67.27.1299.741" timestamp="1600847876814" />
-    <state x="380" y="175" width="672" height="677" key="run.anything.popup" timestamp="1600926682856">
+    <state x="380" y="175" width="672" height="677" key="run.anything.popup" timestamp="1601018480526">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="380" y="175" width="672" height="677" key="run.anything.popup/67.27.1299.741@67.27.1299.741" timestamp="1600926682856" />
+    <state x="380" y="175" width="672" height="677" key="run.anything.popup/67.27.1299.741@67.27.1299.741" timestamp="1601018480526" />
     <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1600909858983">
       <screen x="67" y="27" width="1299" height="741" />
     </state>

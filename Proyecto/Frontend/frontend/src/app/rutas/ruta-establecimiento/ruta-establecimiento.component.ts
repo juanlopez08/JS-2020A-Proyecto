@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {EstablecimientoService} from "../../servicios/http/establecimiento.service";
 import {Router} from "@angular/router";
+import {EsAdminGuard} from "../../servicios/guards/es-admin.guard";
 
 @Component({
   selector: 'app-ruta-establecimiento',
@@ -14,6 +15,7 @@ export class RutaEstablecimientoComponent implements OnInit {
 
   constructor(
     private readonly _establecimientoService:EstablecimientoService,
+    public readonly _esAdminGuard:EsAdminGuard,
     private readonly _router:Router
   ) { }
 
