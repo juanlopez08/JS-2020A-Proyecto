@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import {AuthService} from "../../servicios/auth/auth.service";
+import {EsAdminGuard} from "../../servicios/guards/es-admin.guard";
+import {UsuarioGuardaCuponService} from "../../servicios/http/usuario-guarda-cupon.service";
+import {CuponService} from "../../servicios/http/cupon.service";
 
 @Component({
   selector: 'app-ruta-cupones-guardados',
@@ -7,9 +12,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RutaCuponesGuardadosComponent implements OnInit {
 
-  constructor() { }
+  arregloCuponesGuardados=[];
+
+  constructor(
+    private  readonly _usuarioGuardaCupones:UsuarioGuardaCuponService,
+    private readonly _cuponService:CuponService,
+    private readonly _router: Router,
+    public readonly _authService:AuthService,
+    public readonly _esAdminGuard:EsAdminGuard,
+  ) { }
 
   ngOnInit(): void {
+    const observableTraerTodos=this._usuarioGuardaCupones.traerTodosCuponesGuardadosPorUsuario();
+    observableTraerTodos.subscribe(
+      (cupones: any[])=>{
+        this.arregloCuponesGuardados = cupones;
+         console.log('arregloCuponesGuardados',this.arregloCuponesGuardados)
+      },
+      (error) => {
+        console.error('Error', error);
+      }
+    )
   }
+
+  guardarCupones
 
 }

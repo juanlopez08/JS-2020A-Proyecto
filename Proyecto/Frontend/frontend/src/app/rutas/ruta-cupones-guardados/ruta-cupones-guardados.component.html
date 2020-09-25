@@ -1,1 +1,43 @@
-<p>ruta-cupones-guardados works!</p>
+<!--<p>ruta-cupones-guardados works!</p>-->
+
+<!--<h1> Esta Autenticado {{this._authService.estaAutenticado}}</h1>-->
+<!--<h1> Esta Autenticado {{ this._authService.usuarioAutenticado}}</h1>-->
+
+<body>
+<!--<div class=" mb-4 ml-2">-->
+<!--  <h1>Cupones</h1>-->
+<!--  <button *ngIf="_authService.esUnAdministrador" [routerLink]="['/crearCupon']" class="btn btn-primary">Crear Cupon-->
+<!--  </button>-->
+<!--</div>-->
+
+
+<router-outlet></router-outlet>
+
+
+<div class="row">
+
+  <div *ngFor="let cupon of arregloCuponesGuardados">
+    <div class="col-md-3 ">
+
+      <div class="card mb-4 ml-2" style="width: 18rem;">
+
+        <img src="{{cupon.cupon.path_imagen_cupon}}" class="card-img-top" alt="">
+
+        <div class="card-body">
+          <h5 class="card-title">{{cupon.informacion_cupon}}</h5>
+          <!--    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+          <!--    <a href="#" class="btn btn-primary">Go somewhere</a>-->
+
+
+          <button type="button" class="btn btn-primary">
+            Eliminar de Guardados
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+</body>

@@ -40,6 +40,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {RolesService} from "./servicios/http/roles.service";
 import {ArticuloEnCuponService} from "./servicios/http/articulo-en-cupon.service";
 import {UsuarioTieneRolService} from "./servicios/http/usuario-tiene-rol.service";
+import {UsuarioGuardaCuponService} from "./servicios/http/usuario-guarda-cupon.service";
 
 @NgModule({
   declarations: [
@@ -88,6 +89,7 @@ import {UsuarioTieneRolService} from "./servicios/http/usuario-tiene-rol.service
     ArticuloEnCuponService,
     RutaLoginComponent,
     UsuarioTieneRolService,
+    UsuarioGuardaCuponService,
   ],
   bootstrap: [AppComponent]
 })
