@@ -35,7 +35,8 @@ const routes: Routes = [
     path:'listaCupon',
     component:RutaListaCuponComponent,
     canActivate : [
-       // EstaLogeadoGuard
+        EstaLogeadoGuard,
+      EsAdminGuard
     ]
   },
   {

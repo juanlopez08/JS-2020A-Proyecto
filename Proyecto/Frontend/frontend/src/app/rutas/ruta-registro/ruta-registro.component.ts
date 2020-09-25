@@ -32,16 +32,6 @@ export class RutaRegistroComponent implements OnInit {
       .subscribe(
         (datos:Object) => {
           //   alert('Nuevo usuario creado');
-
-
-
-        //   this._usuarioTieneRolService.crearUsuarioTieneRol(
-        //     {
-        //     "usuario": 11,
-        //       "rol":2,
-        //       "nombre_relacion":"desde registro"
-        //   }
-        // )
           console.log('Nuevo Usuario', datos['id']);
           const idUsuario = usuario.id
           console.log('IDIDID', datos['id'])
@@ -69,7 +59,7 @@ export class RutaRegistroComponent implements OnInit {
           //   alert('Nuevo usuario creado');
 
           console.log('Nuevo Rol', datos);
-          const url = ['/listaCupon']
+          const url = ['/login']
           this._router.navigate(url);
         },
         (error) => {
