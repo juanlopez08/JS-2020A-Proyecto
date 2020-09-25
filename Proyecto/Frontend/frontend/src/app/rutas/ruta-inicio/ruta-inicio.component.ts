@@ -55,7 +55,7 @@ export class RutaInicioComponent implements OnInit {
     observableTraerTodos.subscribe(
       (cupones: any[])=>{
         this.arregloCupones = cupones;
-        console.log('AQUIAQUIAQUI',this._authService.usuarioAutenticado)
+         // console.log('AQUIAQUIAQUI',this._authService.usuarioAutenticado)
       },
       (error) => {
         console.error('Error', error);

@@ -34,9 +34,8 @@ export class RutaLoginComponent implements OnInit {
             this._authService.estaAutenticado = true;
             // JSON.stringify(
             this._authService.usuarioAutenticado = this.usuarioGuardado
-
-            console.log('JAJAJAJAJ',this._authService.usuarioAutenticado )
-
+            this._authService.llenarRol()
+            // console.log('JAJAJAJAJ',this._authService.usuarioAutenticado )
             this.irAInicio()
           }else{
             this._authService.estaAutenticado =false;

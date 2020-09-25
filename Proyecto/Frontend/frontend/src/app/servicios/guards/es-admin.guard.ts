@@ -18,13 +18,22 @@ export class EsAdminGuard implements CanActivate{
     Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean |
     UrlTree {
     //LOGICA BOOLEAN
-    const esAdmin = this._authService.roles
-      .some(
-        (rol)=>{
-          return rol === 'admin'
-        }
-      )
-    return esAdmin;
+    const esAdmin = this._authService.usuarioAutenticado.usuarioTieneRoles[0].rol
+    const rolAdmin = 1
+    if(esAdmin === rolAdmin){
+      return true
+    }else{
+      if(esAdmin === 2){
+      return false
+      }
+    }
+      // .some(
+      //   (rol)=>{
+      //     return rol === 'admin'
+      //   }
+      // )
+    // console.log('EsADMIN',esAdmin)
+    // return esAdmin;
   }
 
 }

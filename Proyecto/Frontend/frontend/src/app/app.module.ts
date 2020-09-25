@@ -39,6 +39,7 @@ import {EsAdminGuard} from "./servicios/guards/es-admin.guard";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {RolesService} from "./servicios/http/roles.service";
 import {ArticuloEnCuponService} from "./servicios/http/articulo-en-cupon.service";
+import {UsuarioTieneRolService} from "./servicios/http/usuario-tiene-rol.service";
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import {ArticuloEnCuponService} from "./servicios/http/articulo-en-cupon.service
     EsAdminGuard,
     RolesService,
     ArticuloEnCuponService,
-    RutaLoginComponent
+    RutaLoginComponent,
+    UsuarioTieneRolService,
   ],
   bootstrap: [AppComponent]
 })

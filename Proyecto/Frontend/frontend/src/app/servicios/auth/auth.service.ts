@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {RolesService} from "../http/roles.service";
 
 @Injectable()
 export class AuthService {
@@ -8,12 +9,13 @@ export class AuthService {
 
   url = 'http://localhost:1337';
   roles = [
-      'admin',
+      // 'admin',
     //  'usuario'
   ];
 
   constructor(
-    private readonly _httpClient: HttpClient
+    private readonly _httpClient: HttpClient,
+    private readonly _rolesService:RolesService
   ) {
   }
 
@@ -23,6 +25,10 @@ export class AuthService {
     )
   }
 
+  llenarRol(){
+    const rolUsuarioAutenticado = this._rolesService.obtenerRolPorId(this.usuarioAutenticado.id)
+    this.roles.push(rolUsuarioAutenticado);
+  }
 
 
 }
