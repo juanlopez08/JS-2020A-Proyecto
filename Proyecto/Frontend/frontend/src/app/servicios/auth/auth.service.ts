@@ -6,7 +6,7 @@ import {RolesService} from "../http/roles.service";
 export class AuthService {
   estaAutenticado = false;
   usuarioAutenticado;
-  // esUnAdministrador=false;
+  esUnAdministrador=false;
 
   url = 'http://localhost:1337';
   roles = [
@@ -16,7 +16,7 @@ export class AuthService {
 
   constructor(
     private readonly _httpClient: HttpClient,
-    private readonly _rolesService: RolesService
+    private readonly _rolesService: RolesService,
   ) {
   }
 
@@ -29,10 +29,26 @@ export class AuthService {
   llenarRol() {
     const rolUsuarioAutenticado = this._rolesService.obtenerRolPorId(this.usuarioAutenticado.id)
     this.roles.push(rolUsuarioAutenticado);
-    // this.verRol();
+    this.verRol();
   }
 
-  // verRol() {
+// <h1>Bienvenido {{this._authService.usuarioAutenticado.nombre_usuario }} {{this._authService.usuarioAutenticado.apellido_usuario }}</h1>
+// <h1>rol {{this._authService.usuarioAutenticado.usuarioTieneRoles[0].rol}}</h1>
+
+verRol() {
+  // const rolActual = this._rolesService.obtenerRolPorId(this.usuarioAutenticado.id)
+  const rolActual = this.usuarioAutenticado.usuarioTieneRoles[0].rol
+  if (rolActual === 1) {
+    this.esUnAdministrador = true
+  } else {
+    if (rolActual === '2') {
+      this.esUnAdministrador = false
+    }
+  }
+  console.log('ADMIN SI' , this.esUnAdministrador)
+}
+
+// verRol() {
   //   // const rolActual = this._rolesService.obtenerRolPorId(this.usuarioAutenticado.id)
   //   if (this.roles[0] === 'admin') {
   //     this.esUnAdministrador = true

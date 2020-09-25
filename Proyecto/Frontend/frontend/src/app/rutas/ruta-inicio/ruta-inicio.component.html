@@ -7,7 +7,7 @@
 <body>
 <div class=" mb-4 ml-2">
 <h1>Cupones</h1>
-<button [routerLink]="['/crearCupon']" class="btn btn-primary">Crear Cupon</button>
+<button *ngIf="_authService.esUnAdministrador"  [routerLink]="['/crearCupon']" class="btn btn-primary">Crear Cupon</button>
 </div>
 
 
@@ -54,10 +54,10 @@
             <h5 class="card-title">{{cupon.informacion_cupon}}</h5>
             <!--    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
             <!--    <a href="#" class="btn btn-primary">Go somewhere</a>-->
-            <button  (click)="irAEditarCupon(cupon.id)" class="btn btn-primary">
+            <button *ngIf="_authService.esUnAdministrador"  (click)="irAEditarCupon(cupon.id)" class="btn btn-primary">
               Editar
             </button>
-            <button  (click)="eliminarCupon(cupon.id)" class="btn btn-primary">
+            <button *ngIf="_authService.esUnAdministrador" (click)="eliminarCupon(cupon.id)" class="btn btn-primary">
               Eliminar
             </button>
             <button type="button" class="btn btn-primary">
