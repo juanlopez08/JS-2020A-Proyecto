@@ -45,7 +45,7 @@ export class RutaRegistroComponent implements OnInit {
           console.log('Nuevo Usuario', datos['id']);
           const idUsuario = usuario.id
           console.log('IDIDID', datos['id'])
-          
+
           this.crearUsuarioTieneRol(datos['id'])
           const url = ['/login']
           this._router.navigate(url);
