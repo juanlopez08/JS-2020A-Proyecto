@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ArticuloService} from "../../servicios/http/articulo.service";
 import {Router} from "@angular/router";
 import {EsAdminGuard} from "../../servicios/guards/es-admin.guard";
+import {AuthService} from "../../servicios/auth/auth.service";
 
 @Component({
   selector: 'app-ruta-articulo',
@@ -17,6 +18,7 @@ export class RutaArticuloComponent implements OnInit {
     private readonly _articuloService:ArticuloService,
     private readonly _router:Router,
     private readonly _esAdminGuard:EsAdminGuard,
+    public readonly _authService:AuthService,
   ) { }
 
   filtrarArreglo(){

@@ -1,6 +1,6 @@
 <div class=" mb-1 ml-2">
   <h1>Articulos</h1>
-  <button [routerLink]="['/crearArticulo']" type="button" class="btn btn-primary">Crear Articulo</button>
+  <button *ngIf="_authService.esUnAdministrador"  [routerLink]="['/crearArticulo']" type="button" class="btn btn-primary">Crear Articulo</button>
 </div>
 
 <div class="input-group mb-4 ml-2">
@@ -22,10 +22,10 @@
           <h5 class="card-title">{{articulo.nombre_articulo}}</h5>
           <p class="card-text">$ {{articulo.precio_articulo}}</p>
 
-          <button (click)="irAEditarArticulo(articulo.id)" type="button" class="btn btn-primary">
+          <button *ngIf="_authService.esUnAdministrador"  (click)="irAEditarArticulo(articulo.id)" type="button" class="btn btn-primary">
             Editar
           </button>
-          <button (click)="eliminarArticulo(articulo.id)" type="button" class="btn btn-primary">
+          <button *ngIf="_authService.esUnAdministrador"  (click)="eliminarArticulo(articulo.id)" type="button" class="btn btn-primary">
             Eliminar
           </button>
         </div>

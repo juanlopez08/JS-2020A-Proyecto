@@ -1,7 +1,7 @@
 <div class=" mb-2 ml-2">
   <h1>Establecimientos</h1>
-  <h6>AVISO!!! No se pueden eliminar establecimientos que aun contengan cupones</h6>
-  <button [routerLink]="['/crearEstablecimiento']" type="button" class="btn btn-primary">Crear Establecimiento</button>
+  <h6 *ngIf="_authService.esUnAdministrador" >AVISO!!! No se pueden eliminar establecimientos que aun contengan cupones</h6>
+  <button *ngIf="_authService.esUnAdministrador"  [routerLink]="['/crearEstablecimiento']" type="button" class="btn btn-primary">Crear Establecimiento</button>
 </div>
 <router-outlet></router-outlet>
 
@@ -27,10 +27,10 @@
           <p class="card-text">Telefono: {{establecimiento.telefono_establecimiento}}</p>
           <p class="card-text">Direccion: {{establecimiento.direccion_establecimiento}}</p>
 
-          <button (click)="irAEditarEstablecimiento(establecimiento.id)" type="button" class="btn btn-primary">
+          <button *ngIf="_authService.esUnAdministrador"  (click)="irAEditarEstablecimiento(establecimiento.id)" type="button" class="btn btn-primary">
             Editar
           </button>
-          <button (click)="eliminarEstablecimiento(establecimiento.id)" type="button" class="btn btn-primary">
+          <button *ngIf="_authService.esUnAdministrador"  (click)="eliminarEstablecimiento(establecimiento.id)" type="button" class="btn btn-primary">
             Eliminar
           </button>
         </div>
