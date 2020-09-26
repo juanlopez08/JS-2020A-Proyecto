@@ -12,10 +12,10 @@ export class UsuarioGuardaCuponService{
 
   //http://localhost:1337/usuarioGuardaCupon?usuario=1
   traerCuponesGuardadosPorUsuario(idUsuario){
-    return this._httpClient.get(this.url + 'usuarioGuardaCupon?usuario=' + idUsuario)
+    return this._httpClient.get(this.url + '/usuarioGuardaCupon?usuario=' + idUsuario)
   }
 
-  traerTodosCuponesGuardadosPorUsuario(){
+  traerTodosCuponesGuardados(){
     return this._httpClient.get(this.url + '/usuarioGuardaCupon')
   }
 
@@ -27,6 +27,12 @@ export class UsuarioGuardaCuponService{
       "nombre_guardar_cupon":"Guardado"
     };
     return this._httpClient.post(this.url + '/usuarioGuardaCupon', usuarioGuardaCupon)
+  }
+
+  eliminarUsuarioGuardaCupon(idUsuariousuarioGuardaCupon:number){
+    return this._httpClient.delete(
+      this.url + '/usuarioGuardaCupon/' + idUsuariousuarioGuardaCupon   //URL
+    )
   }
 
 }

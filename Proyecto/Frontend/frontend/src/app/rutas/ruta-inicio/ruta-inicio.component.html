@@ -60,7 +60,7 @@
             <button *ngIf="_authService.esUnAdministrador" (click)="eliminarCupon(cupon.id)" class="btn btn-primary">
               Eliminar
             </button>
-            <button type="button" class="btn btn-primary">
+            <button type="button" class="btn btn-primary" (click)="guardarCupon(cupon.id, this._authService.usuarioAutenticado.usuarioGuardaCupones.id)">
               Guardar
             </button>
           </div>

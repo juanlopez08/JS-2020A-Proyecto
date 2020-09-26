@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {RutaLoginComponent} from "../ruta-login/ruta-login.component";
 import {AuthService} from "../../servicios/auth/auth.service";
 import {EsAdminGuard} from "../../servicios/guards/es-admin.guard";
+import {UsuarioGuardaCuponService} from "../../servicios/http/usuario-guarda-cupon.service";
 
 @Component({
   selector: 'app-ruta-inicio',
@@ -18,6 +19,7 @@ export class RutaInicioComponent implements OnInit {
     private readonly _cuponService:CuponService,
     private readonly _router: Router,
     public readonly _authService:AuthService,
+    private  readonly _usuarioGuardaCupones:UsuarioGuardaCuponService,
     public readonly _esAdminGuard:EsAdminGuard,
   ) { }
 
@@ -48,6 +50,24 @@ export class RutaInicioComponent implements OnInit {
         }
       );
   }
+
+  guardarCupon(idCupon, idUsuarioGuardaCupon){
+    const idUser = this._authService.usuarioAutenticado.id
+    const obsCrearUsuarioGuardaCupon = this._usuarioGuardaCupones.crearUsuarioGuardaCupon(idUser, idCupon);
+    obsCrearUsuarioGuardaCupon
+      .subscribe(
+        (datos:Object) => {
+//          alert('Nuevo Usuario Guarda Cupon');
+          console.log('Nuevo Usuario Guarda Cupon', datos);
+          const url = ['/inicio']
+          this._router.navigate(url)
+        },
+        (error) => {
+          console.error('Error', error);
+        }
+      )
+  }
+
 
   // para mostrar los que estan activos
   // http://localhost:1337/cupon?estado_cupon=activo

@@ -22,8 +22,24 @@ export class RutaCuponesGuardadosComponent implements OnInit {
     public readonly _esAdminGuard:EsAdminGuard,
   ) { }
 
+  eliminarCuponDeGuardados(id:number){
+    const obsEliminarEstablecimiento = this._usuarioGuardaCupones.eliminarUsuarioGuardaCupon(id);
+    obsEliminarEstablecimiento.subscribe(
+      ()=>{
+        //Borrando de la interfaz
+        const indice = this.arregloCuponesGuardados
+          .findIndex(e => e.id === id);
+        this.arregloCuponesGuardados.splice(indice, 1);
+      },
+      (error)=>{
+        console.error('Error', error);
+      }
+    );
+  }
+
+
   ngOnInit(): void {
-    const observableTraerTodos=this._usuarioGuardaCupones.traerTodosCuponesGuardadosPorUsuario();
+    const observableTraerTodos=this._usuarioGuardaCupones.traerCuponesGuardadosPorUsuario(this._authService.usuarioAutenticado.id);
     observableTraerTodos.subscribe(
       (cupones: any[])=>{
         this.arregloCuponesGuardados = cupones;
@@ -35,20 +51,7 @@ export class RutaCuponesGuardadosComponent implements OnInit {
     )
   }
 
-  guardarCupon(usuarioGuardaCupon){
-    const obsCrearUsuarioGuardaCupon = this._usuarioGuardaCupones.crearUsuarioGuardaCupon(usuarioGuardaCupon);
-    obsCrearUsuarioGuardaCupon
-      .subscribe(
-        (datos:Object) => {
-//          alert('Nuevo Usuario Guarda Cupon');
-          console.log('Nuevo Usuario Guarda Cupon', datos);
-          const url = ['/inicio']
-          this._router.navigate(url)
-        },
-        (error) => {
-          console.error('Error', error);
-        }
-      )
-  }
+
+
 
 }
