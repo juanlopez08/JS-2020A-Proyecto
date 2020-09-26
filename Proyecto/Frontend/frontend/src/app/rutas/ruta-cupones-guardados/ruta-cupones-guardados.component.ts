@@ -35,6 +35,20 @@ export class RutaCuponesGuardadosComponent implements OnInit {
     )
   }
 
-  guardarCupones
+  guardarCupon(usuarioGuardaCupon){
+    const obsCrearUsuarioGuardaCupon = this._usuarioGuardaCupones.crearUsuarioGuardaCupon(usuarioGuardaCupon);
+    obsCrearUsuarioGuardaCupon
+      .subscribe(
+        (datos:Object) => {
+//          alert('Nuevo Usuario Guarda Cupon');
+          console.log('Nuevo Usuario Guarda Cupon', datos);
+          const url = ['/inicio']
+          this._router.navigate(url)
+        },
+        (error) => {
+          console.error('Error', error);
+        }
+      )
+  }
 
 }
