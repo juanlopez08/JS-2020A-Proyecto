@@ -14,6 +14,7 @@ export class RutaCuponesGuardadosComponent implements OnInit {
 
   arregloCuponesGuardados=[];
 
+
   constructor(
     private  readonly _usuarioGuardaCupones:UsuarioGuardaCuponService,
     private readonly _cuponService:CuponService,
@@ -36,6 +37,7 @@ export class RutaCuponesGuardadosComponent implements OnInit {
       }
     );
   }
+
 
 
   ngOnInit(): void {

@@ -1,12 +1,17 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
+import {RutaInicioComponent} from "../../rutas/ruta-inicio/ruta-inicio.component";
+import {RutaCuponesGuardadosComponent} from "../../rutas/ruta-cupones-guardados/ruta-cupones-guardados.component";
 
 @Injectable()
 export class UsuarioGuardaCuponService{
   url = 'http://localhost:1337'
 
+  // cuponEstaGuardado=false;
+
   constructor(
-    private readonly _httpClient:HttpClient
+    private readonly _httpClient:HttpClient,
+    // private readonly _rutaCuponesGuardados:RutaCuponesGuardadosComponent
   ) {
   }
 
@@ -34,5 +39,18 @@ export class UsuarioGuardaCuponService{
       this.url + '/usuarioGuardaCupon/' + idUsuariousuarioGuardaCupon   //URL
     )
   }
+
+  // verCuponGuardado() {
+  //   const guardadoActual = this._rutaCuponesGuardados.arregloCuponesGuardados
+  //     // .usuarioTieneRoles[0].rol
+  //   if (guardadoActual === 1) {
+  //     this.cuponEstaGuardado = true
+  //   } else {
+  //     if (guardadoActual === '2') {
+  //       this.cuponEstaGuardado = false
+  //     }
+  //   }
+  //   console.log('ADMIN SI' , this.cuponEstaGuardado)
+  // }
 
 }

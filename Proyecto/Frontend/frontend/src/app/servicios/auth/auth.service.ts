@@ -48,16 +48,4 @@ verRol() {
   console.log('ADMIN SI' , this.esUnAdministrador)
 }
 
-// verRol() {
-  //   // const rolActual = this._rolesService.obtenerRolPorId(this.usuarioAutenticado.id)
-  //   if (this.roles[0] === 'admin') {
-  //     this.esUnAdministrador = true
-  //   } else {
-  //     if (this.roles[0] === 'usuario') {
-  //       this.esUnAdministrador = false
-  //     }
-  //   }
-  //   console.log('ADMIN SI' , this.esUnAdministrador)
-  // }
-
 }

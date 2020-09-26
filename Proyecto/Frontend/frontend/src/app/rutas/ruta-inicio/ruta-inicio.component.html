@@ -57,10 +57,10 @@
             <button *ngIf="_authService.esUnAdministrador"  (click)="irAEditarCupon(cupon.id)" class="btn btn-primary">
               Editar
             </button>
-            <button *ngIf="_authService.esUnAdministrador" (click)="eliminarCupon(cupon.id)" class="btn btn-primary">
+            <button *ngIf="_authService.esUnAdministrador" (click)="eliminarCupon(cupon.id)" class="btn btn-primary ml-1">
               Eliminar
             </button>
-            <button type="button" class="btn btn-primary" (click)="guardarCupon(cupon.id, this._authService.usuarioAutenticado.usuarioGuardaCupones.id)">
+            <button type="button" class="btn btn-primary ml-1" (click)="guardarCupon(cupon.id, this._authService.usuarioAutenticado.usuarioGuardaCupones.id)">
               Guardar
             </button>
           </div>

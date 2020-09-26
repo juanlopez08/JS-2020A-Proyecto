@@ -59,6 +59,7 @@ export class RutaInicioComponent implements OnInit {
         (datos:Object) => {
 //          alert('Nuevo Usuario Guarda Cupon');
           console.log('Nuevo Usuario Guarda Cupon', datos);
+          alert('Cupon Guardado')
           const url = ['/inicio']
           this._router.navigate(url)
         },
