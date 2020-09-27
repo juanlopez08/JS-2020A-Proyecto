@@ -19,6 +19,7 @@
         <img src="https://www.shopbuilderpro.co.uk/userfiles/100354/user/New_Products_Image.png" class="card-img-top"
              alt="...">
         <div class="card-body">
+          <p *ngIf="_authService.esUnAdministrador"  class="card-text">Id: {{articulo.id}}</p>
           <h5 class="card-title">{{articulo.nombre_articulo}}</h5>
           <p class="card-text">$ {{articulo.precio_articulo}}</p>
 

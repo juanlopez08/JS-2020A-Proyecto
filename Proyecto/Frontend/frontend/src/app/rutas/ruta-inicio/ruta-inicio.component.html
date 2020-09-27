@@ -51,7 +51,8 @@
           <!--  <img src="..." class="card-img-top" alt="...">-->
           <img src="{{cupon.path_imagen_cupon}}" class="card-img-top" alt="" (click)="irAVerCupon(cupon.id)">
           <div class="card-body">
-            <h5 class="card-title">{{cupon.informacion_cupon}}</h5>
+            <h5 class="card-title">Id: {{cupon.id}}</h5>
+            <h5 *ngIf="_authService.esUnAdministrador" class="card-title">{{cupon.informacion_cupon}}</h5>
             <!--    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
             <!--    <a href="#" class="btn btn-primary">Go somewhere</a>-->
             <button *ngIf="_authService.esUnAdministrador"  (click)="irAEditarCupon(cupon.id)" class="btn btn-primary">

@@ -38,6 +38,10 @@ export class RutaCuponesGuardadosComponent implements OnInit {
     );
   }
 
+  usarCuponGuardado(){
+    
+  }
+
 
 
   ngOnInit(): void {

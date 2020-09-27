@@ -21,13 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e210fac3-3547-467e-80c6-9e6e7289a73d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/Backend/backend/config/datastores.js" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Backend/backend/config/datastores.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-crear-articulo/ruta-crear-articulo.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-crear-articulo/ruta-crear-articulo.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-editar-articulo/ruta-editar-articulo.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-editar-articulo/ruta-editar-articulo.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/servicios/http/articulo-en-cupon.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/servicios/http/articulo-en-cupon.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-articulo/ruta-articulo.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-articulo/ruta-articulo.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-establecimiento/ruta-establecimiento.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-establecimiento/ruta-establecimiento.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-inicio/ruta-inicio.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Frontend/frontend/src/app/rutas/ruta-inicio/ruta-inicio.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +82,7 @@
       <workItem from="1600819190432" duration="57040000" />
       <workItem from="1600964637280" duration="3398000" />
       <workItem from="1600984170566" duration="37863000" />
-      <workItem from="1601169837356" duration="7884000" />
+      <workItem from="1601169837356" duration="9627000" />
     </task>
     <servers />
   </component>
