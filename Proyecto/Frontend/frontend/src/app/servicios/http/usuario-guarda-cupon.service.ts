@@ -25,11 +25,11 @@ export class UsuarioGuardaCuponService{
   }
 
   // http://localhost:1337/usuarioGuardaCupon?usuario=1&cupon=5
-  crearUsuarioGuardaCupon(idUsuario, idCupon){
+  crearUsuarioGuardaCupon(idUsuario, idCupon, cantidadUsosCupon){
     const usuarioGuardaCupon = {
       "usuario":idUsuario,
       "cupon": idCupon,
-      "nombre_guardar_cupon":"Guardado"
+      "cantidad_usos":cantidadUsosCupon,
     };
     return this._httpClient.post(this.url + '/usuarioGuardaCupon', usuarioGuardaCupon)
   }
@@ -49,6 +49,11 @@ export class UsuarioGuardaCuponService{
       this.url + '/fechaUso', fechaUso   //URL
     )
   }
+
+  quitarUnUsoDeUsuarioGuardaCupon(cupon, id){
+    return this._httpClient.put(this.url + '/usuarioGuardaCupon/' + id, cupon)
+  }
+
 
   // verCuponGuardado() {
   //   const guardadoActual = this._rutaCuponesGuardados.arregloCuponesGuardados

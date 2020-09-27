@@ -53,7 +53,9 @@ export class RutaInicioComponent implements OnInit {
 
   guardarCupon(idCupon, idUsuarioGuardaCupon){
     const idUser = this._authService.usuarioAutenticado.id
-    const obsCrearUsuarioGuardaCupon = this._usuarioGuardaCupones.crearUsuarioGuardaCupon(idUser, idCupon);
+    const indiceDelCupon =  this.arregloCupones.findIndex(u => u.id === idCupon);
+    const cantidadUsos = this.arregloCupones[indiceDelCupon]['cantidad_usos']
+    const obsCrearUsuarioGuardaCupon = this._usuarioGuardaCupones.crearUsuarioGuardaCupon(idUser, idCupon, cantidadUsos);
     obsCrearUsuarioGuardaCupon
       .subscribe(
         (datos:Object) => {

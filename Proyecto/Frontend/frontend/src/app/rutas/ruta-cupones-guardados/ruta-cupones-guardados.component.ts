@@ -48,7 +48,6 @@ export class RutaCuponesGuardadosComponent implements OnInit {
 //     m = n.getMonth() + 1;
 // //Día
 //     d = n.getDate();
-
     const obsUsarCuponGuardado = this._usuarioGuardaCupones.usarCuponGuardado(idUsuarioGuardaCupon, fechaActualString)
     obsUsarCuponGuardado.subscribe(
       (datos: Object) => {
@@ -61,6 +60,26 @@ export class RutaCuponesGuardadosComponent implements OnInit {
         console.error('Error', error);
       }
     )
+
+  }
+
+  quitarUnUsoDelCuponGuardado(idUsuarioGuardaCupon) {
+    const indice = this.arregloCuponesGuardados.findIndex(e => e.id === idUsuarioGuardaCupon);
+    const usos = this.arregloCuponesGuardados[indice]['cantidad_usos'];
+    console.log('VAINA', usos)
+
+    // const obsUsarCuponGuardado = this._usuarioGuardaCupones.usarCuponGuardado(idUsuarioGuardaCupon, fechaActualString)
+    // obsUsarCuponGuardado.subscribe(
+    //   (datos: Object) => {
+    //     console.log('Nuevo uso', datos);
+    //     alert('Se utilizo el cupon');
+    //     const url = ['/cuponesGuardados']
+    //     this._router.navigate(url)
+    //   },
+    //   (error) => {
+    //     console.error('Error', error);
+    //   }
+    // )
 
   }
 
