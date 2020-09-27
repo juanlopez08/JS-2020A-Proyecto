@@ -43,6 +43,12 @@
         </a>
       </li>
 
+      <li class="nav-item active">
+        <a [routerLink]="['articuloEnCupon']" class="nav-link" href="#">
+          Relacionar Articulo y Cupon <span class="sr-only">(current)</span>
+        </a>
+      </li>
+
       <li *ngIf="_authService.esUnAdministrador"  class="nav-item" >
         <a [routerLink]="['usuarios']" class="nav-link" >
           Usuarios <span class="sr-only">(current)</span>

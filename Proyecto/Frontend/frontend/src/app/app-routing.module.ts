@@ -21,6 +21,7 @@ import {RutaCrearArticuloComponent} from "./rutas/ruta-crear-articulo/ruta-crear
 import {RutaEditarArticuloComponent} from "./rutas/ruta-editar-articulo/ruta-editar-articulo.component";
 import {EstaLogeadoGuard} from "./servicios/guards/esta-logeado.guard";
 import {EsAdminGuard} from "./servicios/guards/es-admin.guard";
+import {RutaArticuloEnCuponComponent} from "./rutas/ruta-articulo-en-cupon/ruta-articulo-en-cupon.component";
 
 const routes: Routes = [
   // CUPONES
@@ -162,7 +163,14 @@ const routes: Routes = [
        EstaLogeadoGuard
     ]
   },
-
+  {
+    component:RutaArticuloEnCuponComponent,
+    path:'articuloEnCupon',
+    canActivate : [
+      // EstaLogeadoGuard
+      // EsAdminGuard
+    ]
+  },
   {
     path:'',
     redirectTo:'/login',

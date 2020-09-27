@@ -41,6 +41,8 @@ import {RolesService} from "./servicios/http/roles.service";
 import {ArticuloEnCuponService} from "./servicios/http/articulo-en-cupon.service";
 import {UsuarioTieneRolService} from "./servicios/http/usuario-tiene-rol.service";
 import {UsuarioGuardaCuponService} from "./servicios/http/usuario-guarda-cupon.service";
+import { RutaArticuloEnCuponComponent } from './rutas/ruta-articulo-en-cupon/ruta-articulo-en-cupon.component';
+import { FormularioArticuloEnCuponComponent } from './componentes/formularios/formulario-articulo-en-cupon/formulario-articulo-en-cupon.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +70,9 @@ import {UsuarioGuardaCuponService} from "./servicios/http/usuario-guarda-cupon.s
     RutaArticuloComponent,
     RutaCrearArticuloComponent,
     RutaEditarArticuloComponent,
-    FormularioArticuloComponent
+    FormularioArticuloComponent,
+    RutaArticuloEnCuponComponent,
+    FormularioArticuloEnCuponComponent
   ],
   imports: [
     BrowserModule,
