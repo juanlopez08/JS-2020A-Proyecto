@@ -167,8 +167,8 @@ const routes: Routes = [
     component:RutaArticuloEnCuponComponent,
     path:'articuloEnCupon',
     canActivate : [
-      // EstaLogeadoGuard
-      // EsAdminGuard
+       EstaLogeadoGuard,
+       EsAdminGuard
     ]
   },
   {
