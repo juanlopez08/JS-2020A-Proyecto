@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {AuthService} from "../../servicios/auth/auth.service";
 import {EsAdminGuard} from "../../servicios/guards/es-admin.guard";
@@ -12,52 +12,71 @@ import {CuponService} from "../../servicios/http/cupon.service";
 })
 export class RutaCuponesGuardadosComponent implements OnInit {
 
-  arregloCuponesGuardados=[];
+  arregloCuponesGuardados = [];
 
 
   constructor(
-    private  readonly _usuarioGuardaCupones:UsuarioGuardaCuponService,
-    private readonly _cuponService:CuponService,
+    private readonly _usuarioGuardaCupones: UsuarioGuardaCuponService,
+    private readonly _cuponService: CuponService,
     private readonly _router: Router,
-    public readonly _authService:AuthService,
-    public readonly _esAdminGuard:EsAdminGuard,
-  ) { }
+    public readonly _authService: AuthService,
+    public readonly _esAdminGuard: EsAdminGuard,
+  ) {
+  }
 
-  eliminarCuponDeGuardados(id:number){
+  eliminarCuponDeGuardados(id: number) {
     const obsEliminarEstablecimiento = this._usuarioGuardaCupones.eliminarUsuarioGuardaCupon(id);
     obsEliminarEstablecimiento.subscribe(
-      ()=>{
+      () => {
         //Borrando de la interfaz
         const indice = this.arregloCuponesGuardados
           .findIndex(e => e.id === id);
         this.arregloCuponesGuardados.splice(indice, 1);
       },
-      (error)=>{
+      (error) => {
         console.error('Error', error);
       }
     );
   }
 
-  usarCuponGuardado(){
-    
+  usarCuponGuardado(idUsuarioGuardaCupon) {
+    const fechaActual = new Date();
+    const fechaActualString = fechaActual.toString();
+// //Año
+//     y = n.getFullYear();
+// //Mes
+//     m = n.getMonth() + 1;
+// //Día
+//     d = n.getDate();
+
+    const obsUsarCuponGuardado = this._usuarioGuardaCupones.usarCuponGuardado(idUsuarioGuardaCupon, fechaActualString)
+    obsUsarCuponGuardado.subscribe(
+      (datos: Object) => {
+        console.log('Nuevo uso', datos);
+        alert('Se utilizo el cupon');
+        const url = ['/cuponesGuardados']
+        this._router.navigate(url)
+      },
+      (error) => {
+        console.error('Error', error);
+      }
+    )
+
   }
 
 
-
   ngOnInit(): void {
-    const observableTraerTodos=this._usuarioGuardaCupones.traerCuponesGuardadosPorUsuario(this._authService.usuarioAutenticado.id);
+    const observableTraerTodos = this._usuarioGuardaCupones.traerCuponesGuardadosPorUsuario(this._authService.usuarioAutenticado.id);
     observableTraerTodos.subscribe(
-      (cupones: any[])=>{
+      (cupones: any[]) => {
         this.arregloCuponesGuardados = cupones;
-         console.log('arregloCuponesGuardados',this.arregloCuponesGuardados)
+        console.log('arregloCuponesGuardados', this.arregloCuponesGuardados)
       },
       (error) => {
         console.error('Error', error);
       }
     )
   }
-
-
 
 
 }

@@ -40,6 +40,16 @@ export class UsuarioGuardaCuponService{
     )
   }
 
+  usarCuponGuardado(idUsuarioGuardaCupon:number, fechaActual:string){
+    const fechaUso = {
+      "fecha_uso":fechaActual,
+      "usuarioGuardaCupon":idUsuarioGuardaCupon,
+    };
+    return this._httpClient.post(
+      this.url + '/fechaUso', fechaUso   //URL
+    )
+  }
+
   // verCuponGuardado() {
   //   const guardadoActual = this._rutaCuponesGuardados.arregloCuponesGuardados
   //     // .usuarioTieneRoles[0].rol
