@@ -17,7 +17,7 @@
       <img src="{{cupon?.path_imagen_cupon}}" class="card-img-top" alt="...">
       <div class="card-body">
         <p class="card-text">Informacion: {{cupon?.informacion_cupon}}</p>
-
+        <p>Cantidad de usos: {{cupon?.cantidad_usos}}</p>
       </div>
     </div>
   </div>
@@ -25,12 +25,42 @@
     <div class="card" style="width: 18rem;">
       <img src="{{cupon?.path_codigo_qr_cupon}}" class="card-img-top" alt="...">
       <div class="card-body">
-        <p>Estado: {{cupon?.estado_cupon}}</p>
-        <p>Cantidad de usos: {{cupon?.cantidad_usos}}</p>
+        <p>{{cupon?.estado_cupon}}</p>
       </div>
     </div>
 
   </div>
 </div>
 
+<!-- ARTICULOS DEL CUPON -->
+<!--<div class="container">-->
+
+<!--  <div class=" mb-1 ml-2">-->
+<!--    <h1>Articulos</h1>-->
+<!--    <button *ngIf="_authService.esUnAdministrador"  [routerLink]="['/crearArticulo']" type="button" class="btn btn-primary">Crear Articulo</button>-->
+<!--  </div>-->
+
+<!--  <div class="row">-->
+<!--    <div *ngFor="let articulo of arregloArticulos">-->
+<!--      <div class="col-md-3 ">-->
+
+<!--        <div class="card mb-4 ml-2" style="width: 14rem;">-->
+<!--          <img src="https://www.shopbuilderpro.co.uk/userfiles/100354/user/New_Products_Image.png" class="card-img-top"-->
+<!--               alt="...">-->
+<!--          <div class="card-body">-->
+<!--            <p *ngIf="_authService.esUnAdministrador"  class="card-text">Id: {{articulo.articulo}}</p>-->
+<!--            <h5 class="card-title">{{articulo.articulo.nombre_articulo}}</h5>-->
+<!--            <p class="card-text">$ {{articulo.articulo.precio_articulo}}</p>-->
+
+<!--            <button *ngIf="_authService.esUnAdministrador"  (click)="irAEditarArticulo(articulo.articulo)" type="button" class="btn btn-primary">-->
+<!--              Editar-->
+<!--            </button>-->
+
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--</div>-->
 

@@ -32,6 +32,8 @@ export class RutaCuponesGuardadosComponent implements OnInit {
         const indice = this.arregloCuponesGuardados
           .findIndex(e => e.id === id);
         this.arregloCuponesGuardados.splice(indice, 1);
+        const url = ['/inicio']
+        this._router.navigate(url)
       },
       (error) => {
         console.error('Error', error);
