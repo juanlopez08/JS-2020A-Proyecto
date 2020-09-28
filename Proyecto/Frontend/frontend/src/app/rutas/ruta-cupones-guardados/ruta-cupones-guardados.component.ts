@@ -69,7 +69,7 @@ export class RutaCuponesGuardadosComponent implements OnInit {
     const usos = Number(this.arregloCuponesGuardados[indice]['cantidad_usos']);
     const usosActualizados = usos - 1;
     // const idCupon = this.arregloCuponesGuardados[indice]['id'];
-    const idUsuario= this._authService.usuarioAutenticado.id;
+    const idUsuario = this._authService.usuarioAutenticado.id;
     // console.log('Usos', usos)
     // console.log('IdCupon', idCupon)
     // console.log('idUsuario', idUsuario)
@@ -83,14 +83,17 @@ export class RutaCuponesGuardadosComponent implements OnInit {
     const obsQuitarUnUsoDelCuponGuardado = this._usuarioGuardaCuponesService
       .quitarUnUsoDeUsuarioGuardaCupon(idCupon, idUsuario, usosActualizados, idUsuarioGuardaCupon);
     obsQuitarUnUsoDelCuponGuardado.subscribe(
-      (datos:Object)=>{
+      (datos: Object) => {
         console.log('Datos', datos)
         this.arregloCuponesGuardados[indice] = datos;
         const url = ['/cuponesGuardados']
         this._router.navigate(url);
       },
-      (error)=>{console.error('Error', error)}
-
+      (error) => {
+        console.error('Error', error)
+        const url = ['/cuponesGuardados']
+        this._router.navigate(url);
+      }
     )
 
 

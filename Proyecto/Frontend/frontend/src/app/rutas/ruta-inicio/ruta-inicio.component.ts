@@ -62,7 +62,7 @@ export class RutaInicioComponent implements OnInit {
 //          alert('Nuevo Usuario Guarda Cupon');
           console.log('Nuevo Usuario Guarda Cupon', datos);
           alert('Cupon Guardado')
-          const url = ['/inicio']
+          const url = ['/cuponesGuardados']
           this._router.navigate(url)
         },
         (error) => {

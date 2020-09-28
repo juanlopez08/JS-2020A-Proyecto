@@ -131,21 +131,24 @@ const routes: Routes = [
     component:RutaUsuarioComponent,
     path:'usuarios',
     canActivate : [
-       EstaLogeadoGuard
+       EstaLogeadoGuard,
+      EsAdminGuard
     ]
   },
   {
     component:RutaCrearUsuarioComponent,
     path:'crearUsuario',
     canActivate : [
-       EstaLogeadoGuard
+       EstaLogeadoGuard,
+      EsAdminGuard
     ]
   },
   {
     component:RutaEditarUsuarioComponent,
     path:'editarUsuario/:id',
     canActivate : [
-       EstaLogeadoGuard
+       EstaLogeadoGuard,
+      EsAdminGuard
     ]
   },
   {

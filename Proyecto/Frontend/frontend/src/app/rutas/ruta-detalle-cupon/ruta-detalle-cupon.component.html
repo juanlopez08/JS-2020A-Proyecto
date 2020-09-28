@@ -1,10 +1,36 @@
 <h1>Detalles sobre el cupon</h1>
-<p>ID: {{cupon?.id}}</p>
-<p>URL imagen: {{cupon?.path_imagen_cupon}}</p>
-<img src="{{cupon?.path_imagen_cupon}}" alt="" width="20%" height="20%">
-<!--<p>URL codigo QR: {{cupon?.path_codigo_qr_cupon}}</p>-->
-<p> Codigo QR: </p>
-<img src="{{cupon?.path_codigo_qr_cupon}}" alt="" width="20%" height="20%">
-<p>Informacion: {{cupon?.informacion_cupon}}</p>
-<p>Estado: {{cupon?.estado_cupon}}</p>
-<p>Cantidad de usos: {{cupon?.cantidad_usos}}</p>
+
+<!--<p>ID: {{cupon?.id}}</p>-->
+<!--&lt;!&ndash;<p>URL imagen: {{cupon?.path_imagen_cupon}}</p>&ndash;&gt;-->
+<!--<img src="{{cupon?.path_imagen_cupon}}" alt="" width="20%" height="20%">-->
+<!--&lt;!&ndash;<p>URL codigo QR: {{cupon?.path_codigo_qr_cupon}}</p>&ndash;&gt;-->
+<!--<p> Codigo QR: </p>-->
+<!--<img src="{{cupon?.path_codigo_qr_cupon}}" alt="" width="20%" height="20%">-->
+<!--<p>Informacion: {{cupon?.informacion_cupon}}</p>-->
+<!--<p>Estado: {{cupon?.estado_cupon}}</p>-->
+<!--<p>Cantidad de usos: {{cupon?.cantidad_usos}}</p>-->
+
+<div class="container">
+  <div class="father uno">
+
+    <div class="card" style="width: 18rem;">
+      <img src="{{cupon?.path_imagen_cupon}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">Informacion: {{cupon?.informacion_cupon}}</p>
+
+      </div>
+    </div>
+  </div>
+  <div class="father dos">
+    <div class="card" style="width: 18rem;">
+      <img src="{{cupon?.path_codigo_qr_cupon}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p>Estado: {{cupon?.estado_cupon}}</p>
+        <p>Cantidad de usos: {{cupon?.cantidad_usos}}</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
