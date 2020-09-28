@@ -1,26 +1,62 @@
-<p>ruta-articulo works!</p>
-<h1>Articulos</h1>
-<button [routerLink]="['/crearArticulo']" >Crear Articulo</button>
+<div class=" mb-1 ml-2">
+  <h1>Articulos</h1>
+  <button *ngIf="_authService.esUnAdministrador"  [routerLink]="['/crearArticulo']" type="button" class="btn btn-primary">Crear Articulo</button>
+</div>
 
-<router-outlet></router-outlet>
+<div class="input-group mb-4 ml-2">
+  <router-outlet></router-outlet>
+  <br>
+  <button (click)="filtrarArreglo()" type="button" class="btn btn-primary">Buscar por nombre</button>
+  <label for="busquedaId"></label>
+  <input id="busquedaId" name="busqueda" type="text" [(ngModel)]="busquedaModeloArticulo" class="form-control" >
+</div>
 
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Nombre</th>
-    <th>Precio</th>
-  </tr>
-  <tr *ngFor="let articulo of arregloArticulo">
-    <td>{{articulo.id}}</td>
-    <td>{{articulo.nombre_articulo}}</td>
-    <td>{{articulo.precio_articulo}}</td>
-    <td>
-      <button (click)="irAEditarArticulo(articulo.id)">
-        Editar
-      </button>
-      <button (click)="eliminarArticulo(articulo.id)">
-        Eliminar
-      </button>
-    </td>
-  </tr>
-</table>
+<div class="row">
+  <div *ngFor="let articulo of arregloArticulo">
+    <div class="col-md-3 ">
+
+      <div class="card mb-4 ml-2" style="width: 14rem;">
+<!--        (click)="irAVerCupon()"-->
+        <img (click)="irAVerCupon(articulo.articulosEnCupones[0].cupon)"  src="https://www.shopbuilderpro.co.uk/userfiles/100354/user/New_Products_Image.png" class="card-img-top"
+             alt="...">
+        <div class="card-body">
+          <p *ngIf="_authService.esUnAdministrador"  class="card-text">Id: {{articulo.id}}</p>
+          <h5 (click)="irAVerCupon(articulo.articulosEnCupones[0].cupon)" class="card-title">{{articulo.nombre_articulo}}</h5>
+          <p (click)="irAVerCupon(articulo.articulosEnCupones[0].cupon)" class="card-text">$ {{articulo.precio_articulo}}</p>
+
+<!--          <p class="card-text" >id cupon {{articulo.articulosEnCupones[0].cupon}}</p>-->
+
+
+          <button *ngIf="_authService.esUnAdministrador"  (click)="irAEditarArticulo(articulo.id)" type="button" class="btn btn-primary">
+            Editar
+          </button>
+          <button *ngIf="_authService.esUnAdministrador"  (click)="eliminarArticulo(articulo.id)" type="button" class="btn btn-primary">
+            Eliminar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--<table>-->
+<!--  <tr>-->
+<!--    <th>ID</th>-->
+<!--    <th>Nombre</th>-->
+<!--    <th>Precio</th>-->
+<!--  </tr>-->
+<!--  <tr *ngFor="let articulo of arregloArticulo">-->
+<!--    <td>{{articulo.id}}</td>-->
+<!--    <td>{{articulo.nombre_articulo}}</td>-->
+<!--    <td>{{articulo.precio_articulo}}</td>-->
+<!--    <td>-->
+<!--      <button (click)="irAEditarArticulo(articulo.id)" >-->
+<!--        Editar-->
+<!--      </button>-->
+<!--      <button (click)="eliminarArticulo(articulo.id)">-->
+<!--        Eliminar-->
+<!--      </button>-->
+<!--    </td>-->
+<!--  </tr>-->
+<!--</table>-->

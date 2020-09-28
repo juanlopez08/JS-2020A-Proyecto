@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {EstablecimientoService} from "../../servicios/http/establecimiento.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-ruta-crear-establecimiento',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RutaCrearEstablecimientoComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private readonly _establecimientoService:EstablecimientoService,
+    private readonly _router:Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  crearEstablecimiento(establecimiento){
+    const obsCrearEstablecimiento = this._establecimientoService.crearEstablecimiento(establecimiento);
+    obsCrearEstablecimiento.subscribe(
+      (datos:Object)=>{
+        const url = ['establecimiento']
+        this._router.navigate(url)
+      },
+      (error)=>{console.error('Error', error)}
+    );
   }
 
 }

@@ -1,32 +1,76 @@
 
+<!--<h1> Esta Autenticado {{this._authService.estaAutenticado}}</h1>-->
+<!--<h1> Esta Autenticado {{ this._authService.usuarioAutenticado}}</h1>-->
+<h1>Bienvenido {{this._authService.usuarioAutenticado.nombre_usuario }} {{this._authService.usuarioAutenticado.apellido_usuario }}</h1>
+<!--<h1>rol {{this._authService.usuarioAutenticado.usuarioTieneRoles[0].rol}}</h1>-->
+
+<body>
+<div class=" mb-4 ml-2">
 <h1>Cupones</h1>
-<button [routerLink]="['/crearCupon']" >Crear Cupon</button>
+<button *ngIf="_authService.esUnAdministrador"  [routerLink]="['/crearCupon']" class="btn btn-primary">Crear Cupon</button>
+</div>
+
+
 
 <router-outlet></router-outlet>
 
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Imagen</th>
-    <th>Descripción</th>
-    <th>Acciones</th>
-  </tr>
-  <tr *ngFor="let cupon of arregloCupones">
-    <td>{{cupon.id}}</td>
+<!--<table>-->
+<!--  <tr>-->
+<!--    <th>ID</th>-->
+<!--    <th>Imagen</th>-->
+<!--    <th>Descripción</th>-->
+<!--    <th>Acciones</th>-->
+<!--  </tr>-->
+<!--  <tr *ngFor="let cupon of arregloCupones">-->
+<!--    <td>{{cupon.id}}</td>-->
 
-    <td><img src="{{cupon.path_imagen_cupon}}" alt="" width="200" height="200" (click)="irAVerCupon(cupon.id)"></td>
+<!--    <td><img src="{{cupon.path_imagen_cupon}}" alt="" width="200" height="200" (click)="irAVerCupon(cupon.id)"></td>-->
 
-    <td>{{cupon.informacion_cupon}}</td>
-    <td>
-      <button (click)="irAEditarCupon(cupon.id)">
-        Editar
-      </button>
-      <button (click)="eliminarCupon(cupon.id)">
-        Eliminar
-      </button>
-      <button type="button">
-        Guardar
-      </button>
-    </td>
-  </tr>
-</table>
+<!--    <td>{{cupon.informacion_cupon}}</td>-->
+<!--    <td>-->
+<!--      <button (click)="irAEditarCupon(cupon.id)">-->
+<!--        Editar-->
+<!--      </button>-->
+<!--      <button (click)="eliminarCupon(cupon.id)">-->
+<!--        Eliminar-->
+<!--      </button>-->
+<!--      <button type="button">-->
+<!--        Guardar-->
+<!--      </button>-->
+<!--    </td>-->
+<!--  </tr>-->
+<!--</table>-->
+
+
+  <div class="row">
+
+    <div *ngFor="let cupon of arregloCupones">
+      <div class="col-md-3 ">
+
+        <div class="card mb-4 ml-2" style="width: 18rem;">
+          <!--  <img src="..." class="card-img-top" alt="...">-->
+          <img src="{{cupon.path_imagen_cupon}}" class="card-img-top" alt="" (click)="irAVerCupon(cupon.id)">
+          <div class="card-body">
+            <h5 *ngIf="_authService.esUnAdministrador" class="card-title">Id: {{cupon.id}}</h5>
+            <h5 class="card-title">{{cupon.informacion_cupon}}</h5>
+            <h5 class="card-title">{{cupon.establecimiento.nombre_establecimiento}}</h5>
+            <!--    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+            <!--    <a href="#" class="btn btn-primary">Go somewhere</a>-->
+            <button *ngIf="_authService.esUnAdministrador"  (click)="irAEditarCupon(cupon.id)" class="btn btn-primary">
+              Editar
+            </button>
+            <button *ngIf="_authService.esUnAdministrador" (click)="eliminarCupon(cupon.id)" class="btn btn-primary ml-1">
+              Eliminar
+            </button>
+            <button type="button" class="btn btn-primary ml-1" (click)="guardarCupon(cupon.id, this._authService.usuarioAutenticado.usuarioGuardaCupones.id)">
+              Guardar
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</body>

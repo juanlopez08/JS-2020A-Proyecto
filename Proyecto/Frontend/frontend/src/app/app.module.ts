@@ -33,6 +33,16 @@ import { RutaCrearArticuloComponent } from './rutas/ruta-crear-articulo/ruta-cre
 import { RutaEditarArticuloComponent } from './rutas/ruta-editar-articulo/ruta-editar-articulo.component';
 import {ArticuloService} from "./servicios/http/articulo.service";
 import { FormularioArticuloComponent } from './componentes/formularios/formulario-articulo/formulario-articulo.component';
+import {AuthService} from "./servicios/auth/auth.service";
+import {EstaLogeadoGuard} from "./servicios/guards/esta-logeado.guard";
+import {EsAdminGuard} from "./servicios/guards/es-admin.guard";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {RolesService} from "./servicios/http/roles.service";
+import {ArticuloEnCuponService} from "./servicios/http/articulo-en-cupon.service";
+import {UsuarioTieneRolService} from "./servicios/http/usuario-tiene-rol.service";
+import {UsuarioGuardaCuponService} from "./servicios/http/usuario-guarda-cupon.service";
+import { RutaArticuloEnCuponComponent } from './rutas/ruta-articulo-en-cupon/ruta-articulo-en-cupon.component';
+import { FormularioArticuloEnCuponComponent } from './componentes/formularios/formulario-articulo-en-cupon/formulario-articulo-en-cupon.component';
 
 @NgModule({
   declarations: [
@@ -60,19 +70,30 @@ import { FormularioArticuloComponent } from './componentes/formularios/formulari
     RutaArticuloComponent,
     RutaCrearArticuloComponent,
     RutaEditarArticuloComponent,
-    FormularioArticuloComponent
+    FormularioArticuloComponent,
+    RutaArticuloEnCuponComponent,
+    FormularioArticuloEnCuponComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    NgbModule,
   ],
   providers: [
     CuponService,
     EstablecimientoService,
     UsuarioService,
     ArticuloService,
+    AuthService,
+    EstaLogeadoGuard,
+    EsAdminGuard,
+    RolesService,
+    ArticuloEnCuponService,
+    RutaLoginComponent,
+    UsuarioTieneRolService,
+    UsuarioGuardaCuponService,
   ],
   bootstrap: [AppComponent]
 })

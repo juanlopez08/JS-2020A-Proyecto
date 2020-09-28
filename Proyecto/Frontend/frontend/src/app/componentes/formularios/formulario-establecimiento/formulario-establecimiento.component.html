@@ -3,13 +3,15 @@
 <form #formularioEstablecimiento="ngForm"
       (ngSubmit)="crearEstablecimiento(formularioEstablecimiento)">
   <div>
-    <label for="nombre_establecimiento">Nombre: </label>
+<!--    <label for="nombre_establecimiento">Nombre: </label>-->
     <input id="nombre_establecimiento"
            type="text" name="path_imagen_cupon"
            [(ngModel)]="nombreEstablecimiento"
            required
            #pathNombreEstablecimiento="ngModel"
            minlength="3"
+           class="fadeIn second"
+           placeholder="Nombre"
     >
     <div *ngIf="pathNombreEstablecimiento.touched && pathNombreEstablecimiento.errors">
       <p *ngIf="pathNombreEstablecimiento.errors.required">
@@ -22,13 +24,15 @@
   </div>
 
   <div>
-    <label for="categoria_establecimiento">Categoria: </label>
+<!--    <label for="categoria_establecimiento">Categoria: </label>-->
     <input id="categoria_establecimiento"
            type="text" name="categoria_establecimiento"
            [(ngModel)]="categoriaEstablecimiento"
            required
            #categoriaEstablecimientoCampo="ngModel"
            minlength="3"
+           class="fadeIn second"
+           placeholder="Categoria"
     >
     <div *ngIf="categoriaEstablecimientoCampo.touched && categoriaEstablecimientoCampo.errors">
       <p *ngIf="categoriaEstablecimientoCampo.errors.required">
@@ -41,13 +45,15 @@
   </div>
 
   <div>
-    <label for="telefono_establecimiento">Telefono: </label>
+<!--    <label for="telefono_establecimiento">Telefono: </label>-->
     <input id="telefono_establecimiento"
            type="text" name="telefono_establecimiento"
            [(ngModel)]="telefonoEstablecimiento"
            required
            #telefonoCampo="ngModel"
            minlength="3"
+           class="fadeIn third"
+           placeholder="Telefono"
     >
     <div *ngIf="telefonoCampo.touched && telefonoCampo.errors">
       <p *ngIf="telefonoCampo.errors.required">
@@ -60,13 +66,15 @@
   </div>
 
   <div>
-    <label for="direccion_establecimiento">Direccion: </label>
+<!--    <label for="direccion_establecimiento">Direccion: </label>-->
     <input id="direccion_establecimiento"
            type="text" name="direccion_establecimiento"
            [(ngModel)]="direccionEstablecimiento"
            required
            #direccionCampo="ngModel"
            minlength="3"
+           class="fadeIn third"
+           placeholder="Direccion"
     >
     <div *ngIf="direccionCampo.touched && direccionCampo.errors">
       <p *ngIf="direccionCampo.errors.required">

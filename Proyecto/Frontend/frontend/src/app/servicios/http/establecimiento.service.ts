@@ -10,14 +10,19 @@ export class EstablecimientoService {
   ) {
   }
 
-  traerTodosEstablecimientos(){
-    return this._httpClient.get(this.url + '/establecimiento')
+  traerTodosEstablecimientos(consulta?:string){
+    return this._httpClient.get(this.url + '/establecimiento?' + consulta)
   }
 
   //POST / Establecimiento
   crearEstablecimiento(establecimiento){
     return this._httpClient.post(this.url + '/establecimiento', establecimiento)
   }
+
+  editarEstablecimiento(establecimiento, id){
+    return this._httpClient.put(this.url + '/establecimiento/' + id, establecimiento)
+  }
+
 
   //GET / Establecimiento
   obtenerUnEstablecimientoPorId(idEstablecimiento:number){

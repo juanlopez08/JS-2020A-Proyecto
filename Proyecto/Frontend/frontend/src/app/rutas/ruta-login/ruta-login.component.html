@@ -1,1 +1,65 @@
-<p>ruta-login works!</p>
+<div class="container">
+  <div class="father uno"><img src="https://img.freepik.com/vector-gratis/logo-entrada_9850-384.jpg?size=626&ext=jpg"
+                               alt="" width="400" height="400"></div>
+  <div class="father dos">
+
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+
+
+        <!--{{_authService.estaAutenticado}}-->
+
+        <form *ngIf="!_authService.estaAutenticado" #formularioLogin="ngForm"
+              (ngSubmit)="revisarLogin(formularioLogin)"
+        >
+          <!--  <label for="correoId" class="fadeIn second" >Correo: </label>-->
+          <input class="fadeIn second" placeholder="Email"
+                 id="correoId" name="correo" [(ngModel)]="correoModelo" type="text">
+
+          <!--  <label for="cedulaId" class="fadeIn third">Cedula: </label>-->
+          <input class="fadeIn third" placeholder="Contraseña"
+                 id="cedulaId" name="correo" [(ngModel)]="passwordModelo" type="text">
+
+          <button class="fadeIn fourth">
+            Logearse
+          </button>
+
+          <button class="fadeIn fourth" [routerLink]="['/registro']">
+            Registrarse
+          </button>
+
+        </form>
+
+        <!-- PARA CUANDO ESTA AUTENTICADO NO MOSTRAR EL FORM DE LOGEO IGUA  -->
+        <form *ngIf="_authService.estaAutenticado" #formularioLogin="ngForm"
+              (ngSubmit)="revisarLogin(formularioLogin)"
+        >
+          <!--  <label for="correoId" class="fadeIn second" >Correo: </label>-->
+          <input  style="display: none" class="fadeIn second" placeholder="Email"
+                 id="correoId2" name="correo" [(ngModel)]="correoModelo" type="text">
+
+          <!--  <label for="cedulaId" class="fadeIn third">Cedula: </label>-->
+          <input  style="display: none" class="fadeIn third" placeholder="Contraseña"
+                 id="cedulaId2" name="correo" [(ngModel)]="passwordModelo" type="text">
+
+          <button class="fadeIn fourth">
+            Logout
+          </button>
+
+          <button  style="display: none" class="fadeIn fourth" [routerLink]="['/registro']">
+            Registrarse
+          </button>
+
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<router-outlet></router-outlet>
+
+

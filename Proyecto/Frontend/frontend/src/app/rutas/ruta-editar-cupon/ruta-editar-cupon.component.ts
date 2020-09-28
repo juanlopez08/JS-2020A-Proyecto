@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CuponService} from "../../servicios/http/cupon.service";
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 
 @Component({
   selector: 'app-ruta-editar-cupon',
@@ -10,9 +10,12 @@ import {ActivatedRoute, Params} from "@angular/router";
 export class RutaEditarCuponComponent implements OnInit {
 
   cupon;
+  mostrarFormulario=false;
+
   constructor(
     private readonly _cuponService:CuponService,
     private readonly _activatedRoute: ActivatedRoute,
+    private readonly _router:Router
     ) { }
 
   ngOnInit(): void {
@@ -21,6 +24,7 @@ export class RutaEditarCuponComponent implements OnInit {
       (parametros: Params) => { //try
         const id = Number(parametros.id);
         const obsCupon = this._cuponService.obtenerUnCuponPorId(id);
+        this.llenarFormularioCupon();
         obsCupon.subscribe(
           (cupon:any)=>{
             this.cupon = cupon
@@ -31,6 +35,21 @@ export class RutaEditarCuponComponent implements OnInit {
         )
       }
       )
+  }
+
+  llenarFormularioCupon(){
+    this.mostrarFormulario=true
+  }
+
+  editarCupon(cupon){
+    const obsEditarCupon = this._cuponService.editarCupon(cupon, this.cupon.id)
+    obsEditarCupon.subscribe(
+      (datos:Object)=>{
+        const url=['/inicio']
+        this._router.navigate(url);
+      },
+      (error)=>{console.error('Error', error)}
+    )
   }
 
 }

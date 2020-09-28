@@ -9,8 +9,8 @@ module.exports = {
 
   attributes: {
 
-    nombre_guardar_cupon:{ // nombre atributo
-      type: 'string',
+    cantidad_usos:{ // nombre atributo
+      type: 'number',
       required: true, // Por defecto es false
     },
 

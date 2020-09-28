@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ArticuloService} from "../../servicios/http/articulo.service";
 import {Router} from "@angular/router";
+import {EsAdminGuard} from "../../servicios/guards/es-admin.guard";
+import {AuthService} from "../../servicios/auth/auth.service";
 
 @Component({
   selector: 'app-ruta-articulo',
@@ -10,11 +12,35 @@ import {Router} from "@angular/router";
 export class RutaArticuloComponent implements OnInit {
 
   arregloArticulo=[];
+  busquedaModeloArticulo = '';
 
   constructor(
     private readonly _articuloService:ArticuloService,
     private readonly _router:Router,
+    private readonly _esAdminGuard:EsAdminGuard,
+    public readonly _authService:AuthService,
+
   ) { }
+
+  filtrarArreglo(){
+    const consulta = {
+      nombre_articulo:{contains:this.busquedaModeloArticulo}
+    };
+
+    const consultaString = 'where=' + JSON.stringify(consulta)
+
+    const observableTraerTodos = this._articuloService
+      .traerTodosArticulos(this.busquedaModeloArticulo != '' ? consultaString : '');
+    observableTraerTodos
+      .subscribe(
+        (articulos: any[]) => {
+          this.arregloArticulo = articulos;
+        },
+        (error) => {
+          console.error('Error', error);
+        }
+      )
+  }
 
   irAEditarArticulo(id:number){
     const ruta = ['editarArticulo', id];
@@ -35,16 +61,14 @@ export class RutaArticuloComponent implements OnInit {
     );
   }
 
+  irAVerCupon(id:number){
+    const ruta = ['/detalleCupon', id]
+    // /editarCupon/1
+    this._router.navigate(ruta) ;
+  }
+
   ngOnInit(): void {
-    const observableTraerTodosArticulos = this._articuloService.traerTodosArticulos();
-    observableTraerTodosArticulos.subscribe(
-      (articulos : any[])=>{
-        this.arregloArticulo = articulos
-      },
-      (error)=>{
-        console.error('Error', error);
-      }
-    );
+    this.filtrarArreglo()
   }
 
 }

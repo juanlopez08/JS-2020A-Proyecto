@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {CuponService} from "../../servicios/http/cupon.service";
 import {Router} from "@angular/router";
+import {RutaLoginComponent} from "../ruta-login/ruta-login.component";
+import {AuthService} from "../../servicios/auth/auth.service";
+import {EsAdminGuard} from "../../servicios/guards/es-admin.guard";
+import {UsuarioGuardaCuponService} from "../../servicios/http/usuario-guarda-cupon.service";
 
 @Component({
   selector: 'app-ruta-inicio',
@@ -13,8 +17,12 @@ export class RutaInicioComponent implements OnInit {
 
   constructor(
     private readonly _cuponService:CuponService,
-    private readonly _router: Router
+    private readonly _router: Router,
+    public readonly _authService:AuthService,
+    private  readonly _usuarioGuardaCupones:UsuarioGuardaCuponService,
+    public readonly _esAdminGuard:EsAdminGuard,
   ) { }
+
 
   irAEditarCupon(id:number){
     const ruta = ['/editarCupon', id]
@@ -43,11 +51,36 @@ export class RutaInicioComponent implements OnInit {
       );
   }
 
+  guardarCupon(idCupon, idUsuarioGuardaCupon){
+    const idUser = this._authService.usuarioAutenticado.id
+    const indiceDelCupon =  this.arregloCupones.findIndex(u => u.id === idCupon);
+    const cantidadUsos = this.arregloCupones[indiceDelCupon]['cantidad_usos']
+    const obsCrearUsuarioGuardaCupon = this._usuarioGuardaCupones.crearUsuarioGuardaCupon(idUser, idCupon, cantidadUsos);
+    obsCrearUsuarioGuardaCupon
+      .subscribe(
+        (datos:Object) => {
+//          alert('Nuevo Usuario Guarda Cupon');
+          console.log('Nuevo Usuario Guarda Cupon', datos);
+          alert('Cupon Guardado')
+          const url = ['/cuponesGuardados']
+          this._router.navigate(url)
+        },
+        (error) => {
+          console.error('Error', error);
+        }
+      )
+  }
+
+
+  // para mostrar los que estan activos
+  // http://localhost:1337/cupon?estado_cupon=activo
+
   ngOnInit(): void {
     const observableTraerTodos=this._cuponService.traerTodos();
     observableTraerTodos.subscribe(
       (cupones: any[])=>{
         this.arregloCupones = cupones;
+         // console.log('AQUIAQUIAQUI',this._authService.usuarioAutenticado)
       },
       (error) => {
         console.error('Error', error);

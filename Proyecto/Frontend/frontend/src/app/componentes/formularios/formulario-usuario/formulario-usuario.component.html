@@ -2,13 +2,15 @@
 <form #formularioUsuario="ngForm"
       (ngSubmit)="crearUsuario(formularioUsuario)">
   <div>
-    <label for="cedula">Cedula: </label>
+<!--    <label for="cedula">Cedula: </label>-->
     <input id="cedula"
            type="text" name="cedula"
            [(ngModel)]="cedulaUsuario"
            required
            #cedulaUsuarioCampo="ngModel"
            minlength="3"
+           class="fadeIn second"
+           placeholder="Cedula"
     >
     <div *ngIf="cedulaUsuarioCampo.touched && cedulaUsuarioCampo.errors">
       <p *ngIf="cedulaUsuarioCampo.errors.required">
@@ -20,13 +22,15 @@
     </div>
   </div>
   <div>
-    <label for="nombre_usuario">Nombre: </label>
+<!--    <label for="nombre_usuario">Nombre: </label>-->
     <input id="nombre_usuario"
            type="text" name="nombre_usuario"
            [(ngModel)]="nombreUsuario"
            required
            #nombreUsuarioCampo="ngModel"
            minlength="3"
+           class="fadeIn second"
+           placeholder="Nombre"
     >
     <div *ngIf="nombreUsuarioCampo.touched && nombreUsuarioCampo.errors">
       <p *ngIf="nombreUsuarioCampo.errors.required">
@@ -38,13 +42,15 @@
     </div>
   </div>
   <div>
-    <label for="apellido_usuario">Apellido: </label>
+<!--    <label for="apellido_usuario">Apellido: </label>-->
     <input id="apellido_usuario"
            type="text" name="apellido_usuario"
            [(ngModel)]="apellidoUsuario"
            required
            #apellidoCampo="ngModel"
            minlength="3"
+           class="fadeIn second"
+           placeholder="Apellido"
     >
     <div *ngIf="apellidoCampo.touched && apellidoCampo.errors">
       <p *ngIf="apellidoCampo.errors.required">
@@ -56,13 +62,15 @@
     </div>
   </div>
   <div>
-    <label for="correo_usuario">Correo: </label>
+<!--    <label for="correo_usuario">Correo: </label>-->
     <input id="correo_usuario"
            type="text" name="correo_usuario"
            [(ngModel)]="correoUsuario"
            required
            #correoCampo="ngModel"
            minlength="3"
+           class="fadeIn third"
+           placeholder="Correo"
     >
     <div *ngIf="correoCampo.touched && correoCampo.errors">
       <p *ngIf="correoCampo.errors.required">
@@ -78,13 +86,15 @@
     </div>
   </div>
   <div>
-    <label for="password_usuario">Contraseña: </label>
+<!--    <label for="password_usuario">Contraseña: </label>-->
     <input id="password_usuario"
            type="text" name="password_usuario"
            [(ngModel)]="passwordUsuario"
            required
            #passwordCampo="ngModel"
            minlength="8"
+           class="fadeIn third"
+           placeholder="Contraseña"
     >
     <div *ngIf="passwordCampo.touched && passwordCampo.errors">
       <p *ngIf="passwordCampo.errors.required">
@@ -96,7 +106,7 @@
     </div>
   </div>
   <div>
-    <label for="birthdate_usuario">Fecha de nacimiento: </label>
+<!--    <label for="birthdate_usuario">Fecha de nacimiento: </label>-->
     <input id="birthdate_usuario"
            type="text" name="birthdate_usuario"
            [(ngModel)]="birthdateUsuario"
@@ -104,6 +114,8 @@
            #birthdateCampo="ngModel"
            minlength="10"
            maxlength="10"
+           class="fadeIn third"
+           placeholder="Fecha de nacimiento"
     >
     <div *ngIf="birthdateCampo.touched && birthdateCampo.errors">
       <p *ngIf="birthdateCampo.errors.required">

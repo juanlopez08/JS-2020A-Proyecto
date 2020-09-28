@@ -1,32 +1,65 @@
-<h1>Usuarios</h1>
-<button [routerLink]="['/crearUsuario']" >Crear Usuario</button>
+<div class=" mb-2 ml-2">
+  <h1>Usuarios</h1>
+  <button [routerLink]="['/crearUsuario']" class="btn btn-primary">Crear Usuario</button>
+</div>
 
-<router-outlet></router-outlet>
+<div class="input-group mb-2 ml-2">
+  <router-outlet></router-outlet>
+  <br>
+  <button (click)="filtrarUsuarios()" class="btn btn-primary">Buscar</button>
+  <label for="busquedaId"></label>
+  <input id="busquedaId" name="busqueda" type="text" [(ngModel)]="busquedaModeloUsuarios" class="form-control">
+</div>
 
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Cedula</th>
-    <th>Nombre</th>
-    <th>Apellido</th>
-    <th>Correo</th>
-    <th>Bithdate</th>
-  </tr>
-  <tr *ngFor="let usuario of arregloUsuario">
-    <td>{{usuario.id}}</td>
-    <td>{{usuario.cedula}}</td>
-    <td>{{usuario.nombre_usuario}}</td>
-    <td>{{usuario.apellido_usuario}}</td>
-    <td>{{usuario.correo_usuario}}</td>
-    <td>{{usuario.birthdate_usuario}}</td>
+<div class="row">
+  <div *ngFor="let usuario of arregloUsuario">
+    <div class="col-md-3 ">
 
-    <td>
-      <button (click)="irAeditarUsuario(usuario.id)">
-        Editar
-      </button>
-      <button (click)="eliminarUsuario(usuario.id)">
-        Eliminar
-      </button>
-    </td>
-  </tr>
-</table>
+      <div class="card mb-4 ml-2" style="width: 14rem;">
+        <img src="https://img.pngio.com/circle-design-user-logo-png-900_520.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{usuario.nombre_usuario}} {{usuario.apellido_usuario}} </h5>
+          <p class="card-text">{{usuario.cedula}}</p>
+          <p class="card-text">{{usuario.correo_usuario}}</p>
+          <p class="card-text">{{usuario.birthdate_usuario}}</p>
+
+          <button (click)="irAeditarUsuario(usuario.id)" type="button" class="btn btn-primary">
+            Editar
+          </button>
+          <button (click)="eliminarUsuario(usuario.id)" type="button" class="btn btn-primary ml-1">
+            Eliminar
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<table>-->
+<!--  <tr>-->
+<!--    <th>ID</th>-->
+<!--    <th>Cedula</th>-->
+<!--    <th>Nombre</th>-->
+<!--    <th>Apellido</th>-->
+<!--    <th>Correo</th>-->
+<!--    <th>Bithdate</th>-->
+<!--  </tr>-->
+<!--  <tr *ngFor="let usuario of arregloUsuario">-->
+<!--    <td>{{usuario.id}}</td>-->
+<!--    <td>{{usuario.cedula}}</td>-->
+<!--    <td>{{usuario.nombre_usuario}}</td>-->
+<!--    <td>{{usuario.apellido_usuario}}</td>-->
+<!--    <td>{{usuario.correo_usuario}}</td>-->
+<!--    <td>{{usuario.birthdate_usuario}}</td>-->
+
+<!--    <td>-->
+<!--      <button (click)="irAeditarUsuario(usuario.id)">-->
+<!--        Editar-->
+<!--      </button>-->
+<!--      <button (click)="eliminarUsuario(usuario.id)">-->
+<!--        Eliminar-->
+<!--      </button>-->
+<!--    </td>-->
+<!--  </tr>-->
+<!--</table>-->

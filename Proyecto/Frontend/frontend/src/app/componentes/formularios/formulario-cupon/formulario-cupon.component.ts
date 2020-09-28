@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {CuponService} from "../../../servicios/http/cupon.service";
 import {Router} from "@angular/router";
 
@@ -8,6 +8,27 @@ import {Router} from "@angular/router";
   styleUrls: ['./formulario-cupon.component.css']
 })
 export class FormularioCuponComponent implements OnInit {
+
+  @Input()
+  pathImagenCuponInput:string;
+
+  @Input()
+  pathCodigoQrInput:string;
+
+  @Input()
+  informacionCuponInput:string;
+
+  @Input()
+  estadoCuponInput:string;
+
+  @Input()
+  cantidadUsosInput:number;
+
+  @Input()
+  establecimientoInput:number;
+
+  @Output()
+  informacionCuponValidada : EventEmitter<any> = new EventEmitter<any>()
 
   constructor(
     private readonly _cuponService:CuponService,
@@ -22,29 +43,32 @@ export class FormularioCuponComponent implements OnInit {
   establecimiento:number;
 
   ngOnInit(): void {
+    if(this.pathImagenCuponInput &&
+      this.pathCodigoQrInput &&
+      this.informacionCuponInput &&
+      this.estadoCuponInput &&
+      this.cantidadUsosInput &&
+      this.establecimientoInput
+    ){
+      this.pathImagenCupon=this.pathImagenCuponInput;
+      this.pathCodigoQr=this.pathCodigoQrInput;
+      this.informacionCupon=this.informacionCuponInput;
+      this.estadoCupon=this.estadoCuponInput;
+      this.cantidadUsos=this.cantidadUsosInput;
+      this.establecimiento=this.establecimientoInput;
+    }
   }
 
   crearCupon(formulario){
     console.log(formulario);
-    const cuponNuevo = {
+    this.informacionCuponValidada.emit({
       path_imagen_cupon:this.pathImagenCupon,
       path_codigo_qr_cupon:this.pathCodigoQr,
       informacion_cupon:this.informacionCupon,
       estado_cupon:this.estadoCupon,
       cantidad_usos: this.cantidadUsos,
       establecimiento:this.establecimiento
-    };
-    const obsCrearCupon = this._cuponService.crearCupon(cuponNuevo);
-    obsCrearCupon
-      .subscribe(
-        (datos:Object) => {
-          alert('Nuevo cupon creado');
-          console.log('Nuevo Cupon', datos);
-           },
-        (error) => {
-          console.error('Error', error);
-        }
-      )
+    })
   }
 
 

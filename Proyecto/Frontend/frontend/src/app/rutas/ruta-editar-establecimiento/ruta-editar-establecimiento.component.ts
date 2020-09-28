@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {EstablecimientoService} from "../../servicios/http/establecimiento.service";
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute, Params, Route, Router} from "@angular/router";
 
 @Component({
   selector: 'app-ruta-editar-establecimiento',
@@ -10,9 +10,12 @@ import {ActivatedRoute, Params} from "@angular/router";
 export class RutaEditarEstablecimientoComponent implements OnInit {
 
   establecimiento;
+  mostrarFormulario = false;
+
   constructor(
     private readonly _establecimientoService:EstablecimientoService,
     private readonly _activatedRoute: ActivatedRoute,
+    private readonly _router:Router,
   ) { }
 
   ngOnInit(): void {
@@ -24,12 +27,28 @@ export class RutaEditarEstablecimientoComponent implements OnInit {
         obsCupon.subscribe(
           (establecimiento:any)=>{
             this.establecimiento = establecimiento
+            this.llenarFormularioEstablecimiento()
           },
           (error)=>{
             console.error('Error', error)
           }
         )
       }
+    )
+  }
+
+  llenarFormularioEstablecimiento(){
+    this.mostrarFormulario = true;
+  }
+
+  editarEstablecimiento(establecimiento){
+    const obsEditarEstablecimiento =this._establecimientoService.editarEstablecimiento(establecimiento, this.establecimiento.id)
+    obsEditarEstablecimiento.subscribe(
+      (datos:Object)=>{
+        const url = ['/establecimiento'];
+        this._router.navigate(url);
+      },
+      (error)=>{console.error('Error',error)}
     )
   }
 
