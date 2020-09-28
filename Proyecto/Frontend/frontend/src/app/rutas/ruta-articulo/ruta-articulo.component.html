@@ -16,12 +16,16 @@
     <div class="col-md-3 ">
 
       <div class="card mb-4 ml-2" style="width: 14rem;">
-        <img src="https://www.shopbuilderpro.co.uk/userfiles/100354/user/New_Products_Image.png" class="card-img-top"
+<!--        (click)="irAVerCupon()"-->
+        <img (click)="irAVerCupon(articulo.articulosEnCupones[0].cupon)"  src="https://www.shopbuilderpro.co.uk/userfiles/100354/user/New_Products_Image.png" class="card-img-top"
              alt="...">
         <div class="card-body">
           <p *ngIf="_authService.esUnAdministrador"  class="card-text">Id: {{articulo.id}}</p>
-          <h5 class="card-title">{{articulo.nombre_articulo}}</h5>
-          <p class="card-text">$ {{articulo.precio_articulo}}</p>
+          <h5 (click)="irAVerCupon(articulo.articulosEnCupones[0].cupon)" class="card-title">{{articulo.nombre_articulo}}</h5>
+          <p (click)="irAVerCupon(articulo.articulosEnCupones[0].cupon)" class="card-text">$ {{articulo.precio_articulo}}</p>
+
+<!--          <p class="card-text" >id cupon {{articulo.articulosEnCupones[0].cupon}}</p>-->
+
 
           <button *ngIf="_authService.esUnAdministrador"  (click)="irAEditarArticulo(articulo.id)" type="button" class="btn btn-primary">
             Editar

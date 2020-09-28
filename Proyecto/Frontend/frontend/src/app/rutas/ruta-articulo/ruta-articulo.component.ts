@@ -19,6 +19,7 @@ export class RutaArticuloComponent implements OnInit {
     private readonly _router:Router,
     private readonly _esAdminGuard:EsAdminGuard,
     public readonly _authService:AuthService,
+
   ) { }
 
   filtrarArreglo(){
@@ -58,6 +59,12 @@ export class RutaArticuloComponent implements OnInit {
         console.error('Error', error);
       }
     );
+  }
+
+  irAVerCupon(id:number){
+    const ruta = ['/detalleCupon', id]
+    // /editarCupon/1
+    this._router.navigate(ruta) ;
   }
 
   ngOnInit(): void {
