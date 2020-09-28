@@ -81,7 +81,7 @@ const routes: Routes = [
   },
   {
     component:RutaDetalleEstablecimientoComponent,
-    path:'detalleEstablecimiento',
+    path:'detalleEstablecimiento/:id',
     canActivate : [
        EstaLogeadoGuard
     ]

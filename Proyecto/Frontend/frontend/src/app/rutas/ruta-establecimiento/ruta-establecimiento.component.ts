@@ -65,6 +65,11 @@ export class RutaEstablecimientoComponent implements OnInit {
     );
   }
 
+  irAVerEstablecimiento(id:number){
+    const ruta = ['/detalleEstablecimiento', id]
+    this._router.navigate(ruta) ;
+  }
+
 
   ngOnInit(): void {
     this.filtrarEstablecimientos()
