@@ -25,7 +25,7 @@
 
         <div class="card-body">
           <h5 class="card-title">{{cupon.cupon.informacion_cupon}}</h5>
-          <h5 class="card-title">Usos disponibles: {{cupon.cupon.cantidad_usos}}</h5>
+          <h5 class="card-title">Usos disponibles: {{cupon.cantidad_usos}}</h5>
 
           <!--    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
           <!--    <a href="#" class="btn btn-primary">Go somewhere</a>-->
@@ -33,13 +33,13 @@
           <button type="button" class="btn btn-primary mb-1" (click)="eliminarCuponDeGuardados(cupon.id)">
             Eliminar de Guardados
           </button>
-          <button type="button" class="btn btn-primary" (click)="usarCuponGuardado(cupon.id)">
+          <button type="button" class="btn btn-primary" (click)="usarCuponGuardado(cupon.id); quitarUnUsoDelCuponGuardado(cupon.id, cupon.cupon.id)">
             Usar
           </button>
 
-          <button type="button" class="btn btn-primary" (click)="quitarUnUsoDelCuponGuardado(cupon.id)">
-            Ver arreglo
-          </button>
+<!--          <button type="button" class="btn btn-primary" (click)="quitarUnUsoDelCuponGuardado(cupon.id)">-->
+<!--            Ver arreglo-->
+<!--          </button>-->
 
         </div>
       </div>

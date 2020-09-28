@@ -50,8 +50,13 @@ export class UsuarioGuardaCuponService{
     )
   }
 
-  quitarUnUsoDeUsuarioGuardaCupon(cupon, id){
-    return this._httpClient.put(this.url + '/usuarioGuardaCupon/' + id, cupon)
+  quitarUnUsoDeUsuarioGuardaCupon(idCupon, idUsuario, usos, id){
+    const usuarioGuardaCupon = {
+      "usuario":idUsuario,
+      "cupon": idCupon,
+      "cantidad_usos":usos
+    }
+    return this._httpClient.put(this.url + '/usuarioGuardaCupon/' + id, usuarioGuardaCupon)
   }
 
 
