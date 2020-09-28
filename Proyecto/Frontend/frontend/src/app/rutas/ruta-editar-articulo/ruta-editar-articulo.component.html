@@ -1,0 +1,14 @@
+<h1>Edicion de articulo</h1>
+
+<div *ngIf="mostrarFormularioArticulo">
+  <app-formulario-articulo
+    [nombreArticuloInput]="articulo.nombre_articulo"
+    [precioArticuloInput]="articulo.precio_articulo"
+
+    (informacionArticuloValidada)="editarArticulo($event)"
+  >
+  </app-formulario-articulo>
+</div>
+
+
+<!--[idCuponInput]="articulo"-->

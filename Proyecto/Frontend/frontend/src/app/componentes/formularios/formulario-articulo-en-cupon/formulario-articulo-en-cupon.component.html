@@ -1,0 +1,125 @@
+<div class="container">
+  <div class="father uno"><img src="https://img.freepik.com/vector-gratis/logo-entrada_9850-384.jpg?size=626&ext=jpg"
+                               alt="" width="400" height="400"></div>
+  <div class="father dos">
+
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+
+
+        <!--AQUI-->
+        <form #formularioArticuloEnCupon="ngForm"
+              (ngSubmit)="crearArticuloEnCupon(formularioArticuloEnCupon)">
+          <div>
+            <!--    CAMPOS           -->
+            <!--    <label for="nombre_articulo">ID del Cupon: </label>-->
+            <input id="id_Cupon"
+                   type="number" step="1.00" min="1"
+                   name="cupon"
+                   [(ngModel)]="idCupon"
+                   required
+                   #idCuponCampo="ngModel"
+                   minlength="3"
+                   class="fadeIn second"
+                   placeholder="ID del Cupon"
+            >
+            <div *ngIf="idCuponCampo.touched && idCuponCampo.errors">
+              <p *ngIf="idCuponCampo.errors.required">
+                Error: Campo requerido
+              </p>
+            </div>
+          </div>
+          <div>
+
+            <!--    <label for="nombre_articulo">ID del Cupon: </label>-->
+            <input id="id_Articulo"
+                   type="number" step="1.00" min="1"
+                   name="articulo"
+                   [(ngModel)]="idArticulo"
+                   required
+                   #idArticuloCampo="ngModel"
+                   minlength="3"
+                   class="fadeIn second"
+                   placeholder="ID del Articulo"
+            >
+            <div *ngIf="idArticuloCampo.touched && idArticuloCampo.errors">
+              <p *ngIf="idArticuloCampo.errors.required">
+                Error: Campo requerido
+              </p>
+            </div>
+          </div>
+          <div>
+
+<!--            <div>-->
+<!--            <input id="tipo_Descuento"-->
+<!--                   type="text" name="tipo_descuento"-->
+<!--                   [(ngModel)]="tipoDescuento"-->
+<!--                   required-->
+<!--                   #tipoDescuentoCampo="ngModel"-->
+<!--                   minlength="3"-->
+<!--                   class="fadeIn second"-->
+<!--                   placeholder="Tipo de descuento"-->
+<!--            >-->
+<!--            <div *ngIf="tipoDescuentoCampo.touched && tipoDescuentoCampo.errors">-->
+<!--              <p *ngIf="tipoDescuentoCampo.errors.required">-->
+<!--                Error: Campo requerido-->
+<!--              </p>-->
+<!--              <p *ngIf="tipoDescuentoCampo.errors.minlength">-->
+<!--                Error: Longitud minima 3-->
+<!--              </p>-->
+<!--            </div>-->
+<!--          </div>-->
+
+            <label for="estado_cupon" class="fadeIn third" >Tipo de descuento: </label>
+            <br>
+            <select name="estado_cupon"
+                    id="estado_cupon"
+                    [(ngModel)]="tipoDescuento"
+                    class="fadeIn third" required>
+              <option value="porciento">Porciento</option>
+              <option value="efectivo">Efectivo</option>
+<!--              <option value="ninguno">Inactivo</option>-->
+            </select>
+
+            <!--    <label for="nombre_articulo">ID del Cupon: </label>-->
+            <input id="cantidad_Descuento"
+                   type="number" step="0.01" min="0"
+                   name="cantidad_descuento"
+                   [(ngModel)]="cantidadDescuento"
+                   required
+                   #cantidadDescuentoCampo="ngModel"
+                   minlength="3"
+                   class="fadeIn second"
+                   placeholder="Cantidad de descuento"
+            >
+            <div *ngIf="cantidadDescuentoCampo.touched && cantidadDescuentoCampo.errors">
+              <p *ngIf="cantidadDescuentoCampo.errors.required">
+                Error: Campo requerido
+              </p>
+            </div>
+          </div>
+
+
+<!--            BOTONES-->
+                      <div>
+                        <button type="button" (click)="ayudaCrearArticuloEnCupon()">
+                          Ayuda
+                        </button>
+                        <button type="submit" [disabled]="!formularioArticuloEnCupon.form.valid">
+                          Submit
+                        </button>
+                        <button type="reset">
+                          Reset
+                        </button>
+                      </div>
+
+        </form>
+
+        <!--AQUI-->
+
+      </div>
+    </div>
+  </div>
+
+</div>
+

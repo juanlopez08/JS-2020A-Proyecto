@@ -1,0 +1,18 @@
+<h1>Edicion de establecimiento</h1>
+
+<!--<p>{{establecimiento?.id}}</p>-->
+<!--<p>{{establecimiento?.nombre_establecimiento}}</p>-->
+<!--<p>{{establecimiento?.categoria_establecimiento}}</p>-->
+<!--<p>{{establecimiento?.telefono_establecimiento}}</p>-->
+<!--<p>{{establecimiento?.direccion_establecimiento}}</p>-->
+
+<div *ngIf="mostrarFormulario">
+<app-formulario-establecimiento
+[nombreEstablecimientoInput]="establecimiento.nombre_establecimiento"
+[categoriaEstablecimientoInput]="establecimiento.categoria_establecimiento"
+[telefonoEstablecimientoInput]="establecimiento.telefono_establecimiento"
+[direccionEstablecimientoInput]="establecimiento.direccion_establecimiento"
+(informacionEstablecimientoValidad)="editarEstablecimiento($event)"
+>
+</app-formulario-establecimiento>
+</div>

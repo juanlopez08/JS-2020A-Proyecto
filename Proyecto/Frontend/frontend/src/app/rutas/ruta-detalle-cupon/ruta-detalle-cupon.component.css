@@ -1,0 +1,17 @@
+
+.container{
+  display: flex;
+  height: 450px;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+
+}
+.father{
+  display: flex;
+  background: white;
+  height: 450px;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}

@@ -1,0 +1,10 @@
+body{
+  background: #eeeeee;
+}
+.card{
+  background: whitesmoke;
+}
+.btn, .btn-primary{
+  background: #397bff;
+  color: white;
+}

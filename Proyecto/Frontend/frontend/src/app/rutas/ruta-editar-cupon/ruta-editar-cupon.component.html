@@ -1,0 +1,20 @@
+
+<!--<p>{{cupon?.id}}</p>-->
+<!--<p>{{cupon?.path_imagen_cupon}}</p>-->
+<!--<p>{{cupon?.path_codigo_qr_cupon}}</p>-->
+<!--<p>{{cupon?.informacion_cupon}}</p>-->
+<!--<p>{{cupon?.estado_cupon}}</p>-->
+<!--<p>{{cupon?.cantidad_usos}}</p>-->
+<!--<p>{{cupon?.establecimiento.id}}</p>-->
+
+<div *ngIf="mostrarFormulario">
+<app-formulario-cupon
+[pathImagenCuponInput]="cupon.path_imagen_cupon"
+[pathCodigoQrInput]="cupon.path_codigo_qr_cupon"
+[informacionCuponInput]="cupon.informacion_cupon"
+[estadoCuponInput]="cupon.estado_cupon"
+[cantidadUsosInput]="cupon.cantidad_usos"
+[establecimientoInput]="cupon.establecimiento.id"
+(informacionCuponValidada)="editarCupon($event)"
+></app-formulario-cupon>
+</div>
